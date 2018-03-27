@@ -31,18 +31,15 @@ int main(int argc, char *argv[]){
 	}
 */
 
-
-/*	//No funciona
 	vector<vector<double>> matriz = mat.construirMatriz();
 
 	for (int i = 0; i < matriz.size(); i++)
 	{	
-		for (int j = 0; i < matriz[i].size(); j++)
+		for (int j = 0; j < matriz[i].size(); j++)
 		{
 			cout << matriz[i][j] << " ";
 		}
 		cout << endl;
 	}
-*/
 	return 0;
 }
