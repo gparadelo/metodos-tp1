@@ -19,6 +19,7 @@ public:
     void logContents();
     void buildFullRep();
     void logFullRep();
+    void sortSparseRep();
 
 private:
 

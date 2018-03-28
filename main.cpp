@@ -16,6 +16,9 @@ int main(int argc, char *argv[]){
     W.buildFullRep();
     W.logFullRep();
 
+    W.sortSparseRep();
+    W.logContents();
+
     return 0;
 
 }

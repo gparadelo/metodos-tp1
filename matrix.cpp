@@ -17,7 +17,7 @@ Matrix::Matrix(ifstream* input):totalLinks(5), totalPages(0) {
     for (int i = 0; i < totalLinks; ++i) {
             *(input) >> saliente;
             *(input) >> entrante;
-            vector<int> newLink = {saliente, entrante, 1};
+            vector<int> newLink = {entrante, saliente, 1};
             sparseRep.push_back(newLink);
     }
 }
@@ -47,4 +47,40 @@ void Matrix::logFullRep() {
         }
         cout << endl;
     }
+}
+
+void Matrix::sortSparseRep() {
+//Bucket sort primero por filas, luego por columnas.
+//Sirve para realizar operaciones mas eficientes.
+//Insertion Sort para que sea lineal si ya esta ordenado.
+
+    int i, j;
+    vector<int> key;
+
+    for (int i = 1; i < totalLinks; ++i) {
+        key = sparseRep[i];
+        j = i - 1;
+
+        while (j >= 0 && sparseRep[j][0] > key[0])
+        {
+            sparseRep[j+1] = sparseRep[j];
+            --j;
+        }
+        sparseRep[j+1] = key;
+    }
+
+
+    for (int i = 1; i < totalLinks; ++i) {
+        key = sparseRep[i];
+        j = i - 1;
+
+        while (j >= 0 && sparseRep[j][1] > key[1] && sparseRep[j][0] >= key[0])
+        {
+            sparseRep[j+1] = sparseRep[j];
+            --j;
+        }
+        sparseRep[j+1] = key;
+
+    }
+
 }
