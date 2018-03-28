@@ -1,15 +1,37 @@
-#include <vector>
-#include <tuple>
+//
+// Created by mike on 28/03/18.
+//
 
+#ifndef PAGERANK_MATRIX_H
+#define PAGERANK_MATRIX_H
+
+#include <fstream>
+#include <iostream>
+#include <vector>
+#include <cassert>
 using namespace std;
 
-class matriz_rala {
-public:
-	int cant_pags;
-	int cant_links;
-	vector<tuple <int, int, double> > valores;		// (fila, columna, valor)
+class Matrix {
 
-	vector<vector<double> > construirMatriz();
-	//convierte la lista de tuplas en una matriz propiamente dicha. Sirve para realizar operaciones.
+public:
+    Matrix(ifstream* input);
+
+    void logContents();
+    void buildFullRep();
+    void logFullRep();
+
+private:
+
+    int totalLinks;
+    int totalPages;
+
+    vector<vector<int>> sparseRep;
+    vector<vector<int>> fullRep;
+
 
 };
+
+
+
+
+#endif //PAGERANK_MATRIX_H
