@@ -4,27 +4,48 @@
 
 #include "matrix.h"
 
-Matrix::Matrix(ifstream* input):totalLinks(5), totalPages(0) {
+Matrix::Matrix(ifstream *input) {
 
-    if(!input->good()){
+    if (!input->good()) {
         cout << "The input file isn't good";
         assert(false);
     }
 
     *(input) >> totalPages >> totalLinks;
 
+
+//    Inicializamos la nueva representacion de vector de filas que serán map
+    for (int j = 0; j < totalPages; ++j) {
+        map<int, double> newMap;
+        fastRep.push_back(newMap);
+    }
+
     int saliente, entrante;
     for (int i = 0; i < totalLinks; ++i) {
-            *(input) >> saliente;
-            *(input) >> entrante;
-            vector<int> newLink = {entrante, saliente, 1};
-            sparseRep.push_back(newLink);
+        *(input) >> saliente;
+        *(input) >> entrante;
+        vector<int> newLink = {entrante, saliente, 1};
+        sparseRep.push_back(newLink);
+
+
+        pair<int, double> elem(saliente - 1, 1);
+        fastRep[entrante - 1].insert(elem);
     }
+
+
 }
 
 void Matrix::logContents() {
-    for (int i = 0; i < totalLinks; ++i) {
-        cout << '(' << sparseRep[i][0] << "," << sparseRep[i][1] << ") " << "con valor: " << sparseRep[i][2] << endl;
+//    for (int i = 0; i < totalLinks; ++i) {
+//        cout << '(' << sparseRep[i][0] - 1 << "," << sparseRep[i][1] - 1 << ") " << "con valor: " << sparseRep[i][2]
+//             << endl;
+//    }
+
+    cout << "Fast Rep contents:" << endl;
+    for (int k = 0; k < totalPages; ++k) {
+        for (auto j: fastRep[k]) {
+            cout << '(' << k << "," << j.first << ") " << "con valor: " << j.second << endl;
+        }
     }
 }
 
@@ -34,7 +55,18 @@ void Matrix::buildFullRep() {
 
     for (int k = 0; k < totalLinks; ++k) {
         vector<int> elem = sparseRep[k];
-        fullRep[elem[0] -1 ][elem[1] -1 ] = elem[2];
+        fullRep[elem[0] - 1][elem[1] - 1] = elem[2];
+    }
+
+//
+    for (int i = 0; i < totalPages; ++i) {
+        map<int, double>::iterator it = fastRep[i].begin();
+
+        while(it != fastRep[i].end()){
+            fullRep[i][it->first] = it->second;
+            it++;
+        }
+        cout << endl;
     }
 
 }
@@ -61,12 +93,11 @@ void Matrix::sortSparseRep() {
         key = sparseRep[i];
         j = i - 1;
 
-        while (j >= 0 && sparseRep[j][0] > key[0])
-        {
-            sparseRep[j+1] = sparseRep[j];
+        while (j >= 0 && sparseRep[j][0] > key[0]) {
+            sparseRep[j + 1] = sparseRep[j];
             --j;
         }
-        sparseRep[j+1] = key;
+        sparseRep[j + 1] = key;
     }
 
 
@@ -74,13 +105,38 @@ void Matrix::sortSparseRep() {
         key = sparseRep[i];
         j = i - 1;
 
-        while (j >= 0 && sparseRep[j][1] > key[1] && sparseRep[j][0] >= key[0])
-        {
-            sparseRep[j+1] = sparseRep[j];
+        while (j >= 0 && sparseRep[j][1] > key[1] && sparseRep[j][0] >= key[0]) {
+            sparseRep[j + 1] = sparseRep[j];
             --j;
         }
-        sparseRep[j+1] = key;
+        sparseRep[j + 1] = key;
 
     }
 
+}
+
+//Modifica la matriz original
+void Matrix::addMatrix(Matrix a) {
+    assert(totalPages == a.totalPages);
+
+//    Para cada fila O(n)
+    for (int i = 0; i < totalPages; ++i) {
+
+//        Para cada columna de la fila
+//        O(elementos de la fila)
+        map<int, double>::iterator aIt = a.fastRep[i].begin();
+        while (aIt != a.fastRep[i].end()) {
+
+//            Si está también en la matriz original
+            map<int, double>::iterator it = fastRep[i].find(aIt->first);
+
+//            O(log(elementos de la fila))
+            if (fastRep[i].find(aIt->first) != fastRep[i].end()) {
+                it->second += aIt->second;
+            } else {
+                fastRep[i].insert(*(aIt));
+            }
+            aIt++;
+        }
+    }
 }

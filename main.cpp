@@ -11,13 +11,13 @@ int main(int argc, char *argv[]){
 
     Matrix W(&input);
 
-    W.logContents();
-
     W.buildFullRep();
     W.logFullRep();
 
-    W.sortSparseRep();
-    W.logContents();
+    W.addMatrix(W);
+
+    W.buildFullRep();
+    W.logFullRep();
 
     return 0;
 

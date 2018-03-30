@@ -9,7 +9,14 @@
 #include <iostream>
 #include <vector>
 #include <cassert>
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <unordered_set>
+#include <string>
+
 using namespace std;
+
 
 class Matrix {
 
@@ -21,6 +28,9 @@ public:
     void logFullRep();
     void sortSparseRep();
 
+    void addMatrix(Matrix a);
+
+
 private:
 
     int totalLinks;
@@ -28,6 +38,8 @@ private:
 
     vector<vector<int>> sparseRep;
     vector<vector<int>> fullRep;
+
+    vector<map<int, double>> fastRep;
 
 
 };

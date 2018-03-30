@@ -27,4 +27,14 @@ vector
 -
 cassert
 -
+map
+-
+unordered_map
+-
+set
+-
+unordered_set
+-
+string
+-
 
