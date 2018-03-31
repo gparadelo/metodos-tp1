@@ -23,13 +23,15 @@ class Matrix {
 public:
     Matrix(ifstream* input);
 
+    Matrix();
+
+    void multiplyMatrix(Matrix a);
     void logContents();
     void buildFullRep();
     void logFullRep();
+
     void sortSparseRep();
-
     void addMatrix(Matrix a);
-
 
 private:
 
@@ -41,7 +43,17 @@ private:
 
     vector<map<int, double>> fastRep;
 
+    vector<map<int, double>> pivotalRep = {};
 
+    vector<int> * getRowNumber(int i);
+
+    vector<int> getColumnNumber(int i);
+
+    int doVectorMultiplication(vector<int> *row, vector<int> *col);
+
+    void setElement(int,int,double);
+
+    void swapFastAndPivotal();
 };
 
 

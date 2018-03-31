@@ -20,6 +20,7 @@ Matrix::Matrix(ifstream *input) {
         fastRep.push_back(newMap);
     }
 
+
     int saliente, entrante;
     for (int i = 0; i < totalLinks; ++i) {
         *(input) >> saliente;
@@ -53,10 +54,10 @@ void Matrix::buildFullRep() {
     vector<vector<int>> matriz(totalPages, vector<int>(totalPages, 0));
     fullRep = matriz;
 
-    for (int k = 0; k < totalLinks; ++k) {
-        vector<int> elem = sparseRep[k];
-        fullRep[elem[0] - 1][elem[1] - 1] = elem[2];
-    }
+//    for (int k = 0; k < totalLinks; ++k) {
+//        vector<int> elem = sparseRep[k];
+//        fullRep[elem[0] - 1][elem[1] - 1] = elem[2];
+//    }
 
 //
     for (int i = 0; i < totalPages; ++i) {
@@ -140,3 +141,69 @@ void Matrix::addMatrix(Matrix a) {
         }
     }
 }
+
+void Matrix::multiplyMatrix(Matrix a) {
+    assert(totalPages == a.totalPages);
+
+    buildFullRep();
+    for (int i = 0; i < totalPages; ++i) {
+       vector<int> * row = getRowNumber(i);
+        for (int j = 0; j < totalPages; ++j) {
+            vector<int> col = a.getColumnNumber(j);
+
+//            Since a column isnt easily accessible from vector of rows representation, we build it and then pass the reference
+//            to the function
+            int elem = doVectorMultiplication(row,&col);
+            setElement(i,j,elem);
+        }
+    }
+
+    swapFastAndPivotal();
+
+    buildFullRep();
+}
+
+vector<int> * Matrix::getRowNumber(int i) {
+    return &fullRep[i];
+}
+
+vector<int>  Matrix::getColumnNumber(int j) {
+    vector<int> res(totalPages,0);
+
+    for (int i = 0; i < totalPages; ++i) {
+        res[i] = fullRep[i][j];
+    }
+
+    return res;
+}
+
+int Matrix::doVectorMultiplication(vector<int> *row, vector<int> *col) {
+    assert(row->size() == col->size());
+
+    int acc = 0 ;
+    for (int i = 0; i < row->size(); ++i) {
+        acc += (*row)[i] * (*col)[i];
+    }
+
+    return acc;
+}
+
+void Matrix::setElement(int i , int j, double a) {
+    while(pivotalRep.size()  < i + 1){
+        map<int, double> newMap;
+        pivotalRep.push_back(newMap);
+    }
+    pair<int, double> elem(j, a);
+    pivotalRep[i].insert(elem);
+}
+
+void Matrix::swapFastAndPivotal() {
+    fastRep.swap(pivotalRep);
+}
+
+
+
+
+
+
+
