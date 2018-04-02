@@ -100,6 +100,7 @@ void Matrix::multiplyMatrix(Matrix a) {
     assert(totalPages == a.totalPages);
 
     buildFullRep();
+    a.buildFullRep();
     for (int i = 0; i < totalPages; ++i) {
        vector<int> * row = getRowNumber(i);
         for (int j = 0; j < totalPages; ++j) {

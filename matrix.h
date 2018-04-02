@@ -52,7 +52,6 @@ private:
 
     void setElement(vector<map<int,double>>* matrix,int i ,int j ,double a);
 
-
     void updateRowForGauss(int j, int i);
 
     void swapFastAndPivotal();

@@ -14,15 +14,13 @@ int main(int argc, char *argv[]){
 
     Matrix B(&b);
 
-//    W.logFullRep();
-//    W.addMatrix(W);
-//
-//    W.logFullRep();
-//
-//    B.logFullRep();
-//
-//    W.multiplyMatrix(B);
-//
+    W.logFullRep();
+    B.logFullRep();
+
+    W.addMatrix(W);
+    W.logFullRep();
+
+    W.multiplyMatrix(B);
     W.logFullRep();
 
     W.gaussianEliminate();
