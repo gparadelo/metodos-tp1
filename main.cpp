@@ -23,10 +23,9 @@ int main(int argc, char *argv[]){
 //
 //    W.multiplyMatrix(B);
 //
-//    W.logFullRep();
+    W.logFullRep();
 
     W.gaussianEliminate();
-    W.buildFullRep();
     W.logFullRep();
 
     return 0;

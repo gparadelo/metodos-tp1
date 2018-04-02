@@ -180,7 +180,7 @@ void Matrix::gaussianEliminate() {
 void Matrix::updateRowForGauss(int rowToUpdate, int mainRow) {
         map<int, double>::iterator it = fastRep[rowToUpdate].begin();
         while(it != fastRep[rowToUpdate].end()){
-            int aToZeroOut = getElement(rowToUpdate, mainRow);
+            int aToZeroOut = getElement(rowToUpdate, it->first);
             it->second -= aToZeroOut / diagonalElement(mainRow) * (getElement(mainRow,it->first));
             it++;
         }
