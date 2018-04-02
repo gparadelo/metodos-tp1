@@ -31,6 +31,8 @@ public:
     void logFullRep();
     void addMatrix(Matrix a);
 
+    void gaussianEliminate();
+
 private:
 
     int totalLinks;
@@ -51,8 +53,17 @@ private:
     void setElement(vector<map<int,double>>* matrix,int i ,int j ,double a);
 
 
+    void updateRowForGauss(int j, int i);
 
     void swapFastAndPivotal();
+
+    int diagonalElement(int i);
+
+    int rowWithTheHighestCoefficientInColumn(int i);
+
+    int getElement(int update, int row);
+
+    void pivotRows(int i, int column);
 };
 
 

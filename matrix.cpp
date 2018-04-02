@@ -52,12 +52,12 @@ void Matrix::buildFullRep() {
             fullRep[i][it->first] = it->second;
             it++;
         }
-        cout << endl;
     }
 
 }
 
 void Matrix::logFullRep() {
+    buildFullRep();
     cout << "Logging full rep:" << endl;
     for (int i = 0; i < totalPages; ++i) {
         for (int j = 0; j < totalPages; ++j) {
@@ -65,6 +65,7 @@ void Matrix::logFullRep() {
         }
         cout << endl;
     }
+    cout << endl << endl;
 }
 
 
@@ -153,6 +154,74 @@ void Matrix::setElement(vector<map<int,double >>* matrix, int i , int j, double 
 void Matrix::swapFastAndPivotal() {
     fastRep.swap(pivotalRep);
 }
+
+void Matrix::gaussianEliminate() {
+    cout << "Doing gauss" << endl;
+    for (int i = 0; i < fastRep.size(); ++i) {
+//        Para cada fila
+        int a = diagonalElement(i);
+        if(a == 0) {
+            pivotRows(i, rowWithTheHighestCoefficientInColumn(i));
+        }
+        int b = diagonalElement(i);
+        if(b == 0 ){
+            continue;
+        }
+        for (int j = i + 1; j < fastRep.size(); ++j) {
+//            Para cada fila que le sigue
+            updateRowForGauss(j,i);
+            logFullRep();
+
+        }
+    }
+
+}
+
+void Matrix::updateRowForGauss(int rowToUpdate, int mainRow) {
+        map<int, double>::iterator it = fastRep[rowToUpdate].begin();
+        while(it != fastRep[rowToUpdate].end()){
+            int aToZeroOut = getElement(rowToUpdate, mainRow);
+            it->second -= aToZeroOut / diagonalElement(mainRow) * (getElement(mainRow,it->first));
+            it++;
+        }
+}
+
+
+
+int Matrix::rowWithTheHighestCoefficientInColumn(int i) {
+    int maxRow = i;
+    int max = diagonalElement(i);
+    for (int j = i; j < totalPages; ++j) {
+        map<int,double> * currentRow= &fastRep[j];
+        map<int,double>::iterator it = currentRow->find(i);
+        if(it != currentRow->end()){
+            if (it->second > max){
+                maxRow = j;
+                max = it->second;
+            }
+        }
+    }
+    return maxRow;
+}
+
+int Matrix::getElement(int row, int col) {
+    if(fastRep[row].find(col) != fastRep[row].end()){
+        return fastRep[row].find(col)->second;
+    }
+    return 0;
+}
+
+int Matrix::diagonalElement(int i) {
+    return getElement(i,i);
+}
+
+void Matrix::pivotRows(int i, int j) {
+    swap(fastRep[i],fastRep[j]);
+}
+
+
+
+
 
 
 
