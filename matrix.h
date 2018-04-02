@@ -29,8 +29,6 @@ public:
     void logContents();
     void buildFullRep();
     void logFullRep();
-
-    void sortSparseRep();
     void addMatrix(Matrix a);
 
 private:
@@ -38,7 +36,6 @@ private:
     int totalLinks;
     int totalPages;
 
-    vector<vector<int>> sparseRep;
     vector<vector<int>> fullRep;
 
     vector<map<int, double>> fastRep;
@@ -51,7 +48,9 @@ private:
 
     int doVectorMultiplication(vector<int> *row, vector<int> *col);
 
-    void setElement(int,int,double);
+    void setElement(vector<map<int,double>>* matrix,int i ,int j ,double a);
+
+
 
     void swapFastAndPivotal();
 };

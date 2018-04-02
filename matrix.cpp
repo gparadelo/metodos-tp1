@@ -25,10 +25,6 @@ Matrix::Matrix(ifstream *input) {
     for (int i = 0; i < totalLinks; ++i) {
         *(input) >> saliente;
         *(input) >> entrante;
-        vector<int> newLink = {entrante, saliente, 1};
-        sparseRep.push_back(newLink);
-
-
         pair<int, double> elem(saliente - 1, 1);
         fastRep[entrante - 1].insert(elem);
     }
@@ -37,11 +33,6 @@ Matrix::Matrix(ifstream *input) {
 }
 
 void Matrix::logContents() {
-//    for (int i = 0; i < totalLinks; ++i) {
-//        cout << '(' << sparseRep[i][0] - 1 << "," << sparseRep[i][1] - 1 << ") " << "con valor: " << sparseRep[i][2]
-//             << endl;
-//    }
-
     cout << "Fast Rep contents:" << endl;
     for (int k = 0; k < totalPages; ++k) {
         for (auto j: fastRep[k]) {
@@ -54,12 +45,6 @@ void Matrix::buildFullRep() {
     vector<vector<int>> matriz(totalPages, vector<int>(totalPages, 0));
     fullRep = matriz;
 
-//    for (int k = 0; k < totalLinks; ++k) {
-//        vector<int> elem = sparseRep[k];
-//        fullRep[elem[0] - 1][elem[1] - 1] = elem[2];
-//    }
-
-//
     for (int i = 0; i < totalPages; ++i) {
         map<int, double>::iterator it = fastRep[i].begin();
 
@@ -82,39 +67,6 @@ void Matrix::logFullRep() {
     }
 }
 
-void Matrix::sortSparseRep() {
-//Bucket sort primero por filas, luego por columnas.
-//Sirve para realizar operaciones mas eficientes.
-//Insertion Sort para que sea lineal si ya esta ordenado.
-
-    int i, j;
-    vector<int> key;
-
-    for (int i = 1; i < totalLinks; ++i) {
-        key = sparseRep[i];
-        j = i - 1;
-
-        while (j >= 0 && sparseRep[j][0] > key[0]) {
-            sparseRep[j + 1] = sparseRep[j];
-            --j;
-        }
-        sparseRep[j + 1] = key;
-    }
-
-
-    for (int i = 1; i < totalLinks; ++i) {
-        key = sparseRep[i];
-        j = i - 1;
-
-        while (j >= 0 && sparseRep[j][1] > key[1] && sparseRep[j][0] >= key[0]) {
-            sparseRep[j + 1] = sparseRep[j];
-            --j;
-        }
-        sparseRep[j + 1] = key;
-
-    }
-
-}
 
 //Modifica la matriz original
 void Matrix::addMatrix(Matrix a) {
@@ -129,6 +81,7 @@ void Matrix::addMatrix(Matrix a) {
         while (aIt != a.fastRep[i].end()) {
 
 //            Si está también en la matriz original
+//            O(log (elementos de la fila))
             map<int, double>::iterator it = fastRep[i].find(aIt->first);
 
 //            O(log(elementos de la fila))
@@ -154,7 +107,7 @@ void Matrix::multiplyMatrix(Matrix a) {
 //            Since a column isnt easily accessible from vector of rows representation, we build it and then pass the reference
 //            to the function
             int elem = doVectorMultiplication(row,&col);
-            setElement(i,j,elem);
+            setElement(&pivotalRep, i,j,elem);
         }
     }
 
@@ -188,13 +141,13 @@ int Matrix::doVectorMultiplication(vector<int> *row, vector<int> *col) {
     return acc;
 }
 
-void Matrix::setElement(int i , int j, double a) {
-    while(pivotalRep.size()  < i + 1){
+void Matrix::setElement(vector<map<int,double >>* matrix, int i , int j, double a) {
+    while(matrix->size()  < i + 1){
         map<int, double> newMap;
-        pivotalRep.push_back(newMap);
+        matrix->push_back(newMap);
     }
     pair<int, double> elem(j, a);
-    pivotalRep[i].insert(elem);
+    (*matrix)[i].insert(elem);
 }
 
 void Matrix::swapFastAndPivotal() {
