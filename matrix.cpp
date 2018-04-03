@@ -106,7 +106,7 @@ void Matrix::multiplyMatrix(Matrix a) {
         for (int j = 0; j < totalPages; ++j) {
             vector<int> col = a.getColumnNumber(j);
 
-//            Since a column isnt easily accessible from vector of rows representation, we build it and then pass the reference
+//            Since a column isn't easily accessible from vector of rows representation, we build it and then pass the reference
 //            to the function
             int elem = doVectorMultiplication(row,&col);
             setElement(&pivotalRep, i,j,elem);
@@ -220,6 +220,17 @@ void Matrix::pivotRows(int i, int j) {
     swap(fastRep[i],fastRep[j]);
 }
 
+void Matrix::scalarMultipy(int x) {
+    for (int i = 0; i < totalPages; ++i) {
+        map<int,double>::iterator it = fastRep[i].begin();
+
+        while (it != fastRep[i].end()) {
+            it->second *= x;
+            it++;
+        }
+    }
+
+}
 
 
 

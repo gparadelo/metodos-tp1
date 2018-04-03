@@ -30,6 +30,7 @@ public:
     void buildFullRep();
     void logFullRep();
     void addMatrix(Matrix a);
+    void scalarMultipy(int x);
 
     void gaussianEliminate();
 
