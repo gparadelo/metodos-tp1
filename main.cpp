@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
     W.logFullRep();
 
     int x = 3;
-    W.scalarMultipy(x);
+    W.scalarMultiply(x);
     W.logFullRep();
 
     W.gaussianEliminate();

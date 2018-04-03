@@ -5,3 +5,5 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES main.cpp matrix.cpp matrix.h)
 add_executable(pageRank ${SOURCE_FILES})
+
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")

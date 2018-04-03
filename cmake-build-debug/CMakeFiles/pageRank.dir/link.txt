@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/pageRank.dir/main.cpp.o CMakeFiles/pageRank.dir/matrix.cpp.o  -o pageRank 
+/usr/bin/c++   -Wall -Wextra -g   CMakeFiles/pageRank.dir/main.cpp.o CMakeFiles/pageRank.dir/matrix.cpp.o  -o pageRank 

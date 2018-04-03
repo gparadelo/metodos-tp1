@@ -42,11 +42,11 @@ void Matrix::logContents() {
 }
 
 void Matrix::buildFullRep() {
-    vector<vector<int>> matriz(totalPages, vector<int>(totalPages, 0));
+    vector<vector<double>> matriz((unsigned long)totalPages, vector<double>(totalPages, 0));
     fullRep = matriz;
 
     for (int i = 0; i < totalPages; ++i) {
-        map<int, double>::iterator it = fastRep[i].begin();
+        auto it = fastRep[i].begin();
 
         while(it != fastRep[i].end()){
             fullRep[i][it->first] = it->second;
@@ -102,13 +102,13 @@ void Matrix::multiplyMatrix(Matrix a) {
     buildFullRep();
     a.buildFullRep();
     for (int i = 0; i < totalPages; ++i) {
-       vector<int> * row = getRowNumber(i);
+       vector<double> * row = getRowNumber(i);
         for (int j = 0; j < totalPages; ++j) {
-            vector<int> col = a.getColumnNumber(j);
+            vector<double> col = a.getColumnNumber(j);
 
 //            Since a column isn't easily accessible from vector of rows representation, we build it and then pass the reference
 //            to the function
-            int elem = doVectorMultiplication(row,&col);
+            double elem = doVectorMultiplication(row,&col);
             setElement(&pivotalRep, i,j,elem);
         }
     }
@@ -118,12 +118,12 @@ void Matrix::multiplyMatrix(Matrix a) {
     buildFullRep();
 }
 
-vector<int> * Matrix::getRowNumber(int i) {
+vector<double> * Matrix::getRowNumber(int i) {
     return &fullRep[i];
 }
 
-vector<int>  Matrix::getColumnNumber(int j) {
-    vector<int> res(totalPages,0);
+vector<double>  Matrix::getColumnNumber(int j) {
+    vector<double> res(totalPages,0);
 
     for (int i = 0; i < totalPages; ++i) {
         res[i] = fullRep[i][j];
@@ -132,10 +132,10 @@ vector<int>  Matrix::getColumnNumber(int j) {
     return res;
 }
 
-int Matrix::doVectorMultiplication(vector<int> *row, vector<int> *col) {
+double Matrix::doVectorMultiplication(vector<double> *row, vector<double> *col) {
     assert(row->size() == col->size());
 
-    int acc = 0 ;
+    double acc = 0 ;
     for (int i = 0; i < row->size(); ++i) {
         acc += (*row)[i] * (*col)[i];
     }
@@ -205,7 +205,7 @@ int Matrix::rowWithTheHighestCoefficientInColumn(int i) {
     return maxRow;
 }
 
-int Matrix::getElement(int row, int col) {
+double Matrix::getElement(int row, int col) {
     if(fastRep[row].find(col) != fastRep[row].end()){
         return fastRep[row].find(col)->second;
     }
@@ -220,7 +220,7 @@ void Matrix::pivotRows(int i, int j) {
     swap(fastRep[i],fastRep[j]);
 }
 
-void Matrix::scalarMultipy(int x) {
+void Matrix::scalarMultiply(int x) {
     for (int i = 0; i < totalPages; ++i) {
         map<int,double>::iterator it = fastRep[i].begin();
 

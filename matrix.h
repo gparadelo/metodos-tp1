@@ -21,16 +21,16 @@ using namespace std;
 class Matrix {
 
 public:
-    Matrix(ifstream* input);
+    explicit Matrix(ifstream* input);
 
-    Matrix();
+    Matrix() {}
 
     void multiplyMatrix(Matrix a);
     void logContents();
     void buildFullRep();
     void logFullRep();
     void addMatrix(Matrix a);
-    void scalarMultipy(int x);
+    void scalarMultiply(int x);
 
     void gaussianEliminate();
 
@@ -39,17 +39,17 @@ private:
     int totalLinks;
     int totalPages;
 
-    vector<vector<int>> fullRep;
+    vector<vector<double>> fullRep;
 
     vector<map<int, double>> fastRep;
 
     vector<map<int, double>> pivotalRep = {};
 
-    vector<int> * getRowNumber(int i);
+    vector<double> * getRowNumber(int i);
 
-    vector<int> getColumnNumber(int i);
+    vector<double> getColumnNumber(int i);
 
-    int doVectorMultiplication(vector<int> *row, vector<int> *col);
+    double doVectorMultiplication(vector<double> *row, vector<double> *col);
 
     void setElement(vector<map<int,double>>* matrix,int i ,int j ,double a);
 
@@ -61,7 +61,7 @@ private:
 
     int rowWithTheHighestCoefficientInColumn(int i);
 
-    int getElement(int update, int row);
+    double getElement(int update, int row);
 
     void pivotRows(int i, int column);
 };
