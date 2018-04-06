@@ -34,6 +34,7 @@ public:
 
     void gaussianEliminate();
 
+    vector<double> ResolveTheProlem (vector<double> sol);
 private:
 
     int totalLinks;

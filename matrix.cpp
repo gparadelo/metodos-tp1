@@ -232,6 +232,23 @@ void Matrix::scalarMultiply(int x) {
 
 }
 
+vector<double> Matrix::ResolveTheProlem (vector<double> sol) {
+    vector<double> res;
+    for (int i = fastRep.size(); i > 0; i--){
+        map<int, double>::iterator it = fastRep[i].end();
+        double incognita = sol[i];
+        while (it != fastRep[i].begin()){
+            if (it == fastRep[i].begin()){
+                res[i] = incognita/it->second;
+            } else {
+                incognita += it->second;
+            }
+            it--;
+        }
+    }
+    return res;
+}
+
 
 
 
