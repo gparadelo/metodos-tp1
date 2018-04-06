@@ -99,6 +99,8 @@ void Matrix::addMatrix(Matrix a) {
 void Matrix::multiplyMatrix(Matrix a) {
     assert(totalPages == a.totalPages);
 
+    vector<map<int, double>> pivotalRep = {};
+
     buildFullRep();
     a.buildFullRep();
     for (int i = 0; i < totalPages; ++i) {
@@ -113,7 +115,7 @@ void Matrix::multiplyMatrix(Matrix a) {
         }
     }
 
-    swapFastAndPivotal();
+    swapFastAndPivotal(pivotalRep);
 
     buildFullRep();
 }
@@ -144,6 +146,7 @@ double Matrix::doVectorMultiplication(vector<double> *row, vector<double> *col) 
 }
 
 void Matrix::setElement(vector<map<int,double >>* matrix, int i , int j, double a) {
+    if (a==0) return;
     while(matrix->size()  < i + 1){
         map<int, double> newMap;
         matrix->push_back(newMap);
@@ -152,7 +155,7 @@ void Matrix::setElement(vector<map<int,double >>* matrix, int i , int j, double 
     (*matrix)[i].insert(elem);
 }
 
-void Matrix::swapFastAndPivotal() {
+void Matrix::swapFastAndPivotal(vector<map<int,double>>& pivotalRep) {
     fastRep.swap(pivotalRep);
 }
 
@@ -163,10 +166,12 @@ void Matrix::gaussianEliminate() {
         int a = diagonalElement(i);
         if(a == 0) {
             pivotRows(i, rowWithTheHighestCoefficientInColumn(i));
+//            Acordarse de guardar este pivoteo
         }
         int b = diagonalElement(i);
         if(b == 0 ){
             continue;
+//        No es li
         }
         for (int j = i + 1; j < fastRep.size(); ++j) {
 //            Para cada fila que le sigue
@@ -180,10 +185,15 @@ void Matrix::gaussianEliminate() {
 
 void Matrix::updateRowForGauss(int rowToUpdate, int mainRow) {
         map<int, double>::iterator it = fastRep[rowToUpdate].begin();
+        if(it->first > mainRow) return; //Si el primer elemento no nulo está en mas a la derecha que la diagonal
         while(it != fastRep[rowToUpdate].end()){
             int aToZeroOut = getElement(rowToUpdate, it->first);
             it->second -= aToZeroOut / diagonalElement(mainRow) * (getElement(mainRow,it->first));
-            it++;
+            if(it->second == 0){
+                it = fastRep[rowToUpdate].erase(it);
+            } else {
+                it++;
+            }
         }
 }
 
@@ -233,16 +243,18 @@ void Matrix::scalarMultiply(int x) {
 }
 
 vector<double> Matrix::resolveTheProlem (vector<double> sol) {
-    vector<double> res;
-    for (int i = fastRep.size(); i > 0; i--){
+    vector<double> res(sol.size(),0);
+    for (int i = fastRep.size()-1; i >= 0; i--){
         map<int, double>::iterator it = fastRep[i].end();
+        it--;
         double incognita = sol[i];
-        int j = fastRep.size();
+        int j = fastRep.size()-1;
         while (it != fastRep[i].begin()){
             incognita -= (it->second*res[j]);            
             it--;
             j--;
         }
+//        assert(it->second == 0);
         res[i] = incognita/it->second;        
     }
     return res;

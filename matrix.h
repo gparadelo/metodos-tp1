@@ -46,7 +46,6 @@ private:
 
     vector<map<int, double>> fastRep;
 
-    vector<map<int, double>> pivotalRep = {};
 
     vector<double> * getRowNumber(int i);
 
@@ -58,7 +57,7 @@ private:
 
     void updateRowForGauss(int j, int i);
 
-    void swapFastAndPivotal();
+    void swapFastAndPivotal(vector<map<int,double>>&);
 
     int diagonalElement(int i);
 
