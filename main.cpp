@@ -4,31 +4,37 @@
 
 using namespace std;
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]) {
 
     ifstream input(argv[1]);
     ifstream b("../tests/b.txt");
-    int p (int argv[2]);
+    int p(int argv[2]);
 
-    Matrix W(&input);
-    Matrix B(&b);
 
-//    W.multiplyMatrix(B);
-    W.logFullRep();
-    W.gaussianEliminate();
-    W.logFullRep();
+    Matrix id;
+    id.buildIdentity(3);
+    id.logFullRep();
+    id.scalarMultiply(3);
+    id.logFullRep();
+//    Matrix W(&input);
+//    Matrix B(&b);
 //
-    vector<double> sol({4,2,3});
-    vector<double> res = W.resolveTheProlem(sol);
-
-    cout << "Solucion: [" ;
-
-    for (int i = 0; i < W.getTotalPages(); ++i)
-    {
-        cout << res[i] << ", ";
-    }
-
-    cout << "]";
+////    W.multiplyMatrix(B);
+//    W.logFullRep();
+//    W.gaussianEliminate();
+//    W.logFullRep();
+////
+//    vector<double> sol({4,2,3});
+//    vector<double> res = W.resolveTheProlem(sol);
+//
+//    cout << "Solucion: [" ;
+//
+//    for (int i = 0; i < W.getTotalPages(); ++i)
+//    {
+//        cout << res[i] << ", ";
+//    }
+//
+//    cout << "]";
 
 //
 //    B.logFullRep();

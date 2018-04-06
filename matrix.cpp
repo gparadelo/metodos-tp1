@@ -4,6 +4,7 @@
 
 #include "matrix.h"
 
+
 Matrix::Matrix(ifstream *input) {
 
     if (!input->good()) {
@@ -267,6 +268,19 @@ int Matrix::getTotalPages(){
 int Matrix::getTotalLinks(){
     return totalLinks;
 }
+
+void Matrix::buildIdentity(int i) {
+    totalLinks = i;
+    totalPages = i;
+    for (int j = 0; j < i; ++j) {
+        map<int,double> row;
+        pair<int, double> elem(j, 1);
+        row.insert(elem);
+        fastRep.push_back(row);
+    }
+}
+
+
 
 
 

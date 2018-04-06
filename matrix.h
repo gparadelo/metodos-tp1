@@ -25,6 +25,10 @@ public:
 
     Matrix() {}
 
+
+
+    void buildIdentity(int i);
+
     void multiplyMatrix(Matrix a);
     void logContents();
     void buildFullRep();
@@ -36,11 +40,13 @@ public:
     int getTotalPages();
     int getTotalLinks();
 
+
     vector<double> resolveTheProlem (vector<double> sol);
 private:
 
     int totalLinks;
     int totalPages;
+
 
     vector<vector<double>> fullRep;
 
