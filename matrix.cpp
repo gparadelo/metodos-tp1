@@ -232,26 +232,29 @@ void Matrix::scalarMultiply(int x) {
 
 }
 
-vector<double> Matrix::ResolveTheProlem (vector<double> sol) {
+vector<double> Matrix::resolveTheProlem (vector<double> sol) {
     vector<double> res;
     for (int i = fastRep.size(); i > 0; i--){
         map<int, double>::iterator it = fastRep[i].end();
         double incognita = sol[i];
+        int j = fastRep.size();
         while (it != fastRep[i].begin()){
-            if (it == fastRep[i].begin()){
-                res[i] = incognita/it->second;
-            } else {
-                incognita += it->second;
-            }
+            incognita -= (it->second*res[j]);            
             it--;
+            j--;
         }
+        res[i] = incognita/it->second;        
     }
     return res;
 }
 
+int Matrix::getTotalPages(){
+    return totalPages;
+}
 
-
-
+int Matrix::getTotalLinks(){
+    return totalLinks;
+}
 
 
 

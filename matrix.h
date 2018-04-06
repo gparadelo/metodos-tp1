@@ -33,8 +33,10 @@ public:
     void scalarMultiply(int x);
 
     void gaussianEliminate();
+    int getTotalPages();
+    int getTotalLinks();
 
-    vector<double> ResolveTheProlem (vector<double> sol);
+    vector<double> resolveTheProlem (vector<double> sol);
 private:
 
     int totalLinks;

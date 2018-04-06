@@ -30,6 +30,18 @@ int main(int argc, char *argv[]){
     W.gaussianEliminate();
     W.logFullRep();
 
+    vector<double> sol(3, 1);
+
+    vector<double> res = W.resolveTheProlem(sol);
+    cout << "Solucion: [" ;
+
+    for (int i = 0; i < W.getTotalPages(); ++i)
+    {
+        cout << res[i] << ", ";
+    }
+
+    cout << "]";
+
     return 0;
 
 }
