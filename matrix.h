@@ -65,7 +65,7 @@ private:
 
     void swapFastAndPivotal(vector<map<int,double>>&);
 
-    int diagonalElement(int i);
+    double diagonalElement(int i);
 
     int rowWithTheHighestCoefficientInColumn(int i);
 

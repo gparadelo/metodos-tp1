@@ -188,7 +188,7 @@ void Matrix::updateRowForGauss(int rowToUpdate, int mainRow) {
         map<int, double>::iterator it = fastRep[rowToUpdate].begin();
         if(it->first > mainRow) return; //Si el primer elemento no nulo está en mas a la derecha que la diagonal
         while(it != fastRep[rowToUpdate].end()){
-            int aToZeroOut = getElement(rowToUpdate, it->first);
+            double aToZeroOut = getElement(rowToUpdate, it->first);
             it->second -= aToZeroOut / diagonalElement(mainRow) * (getElement(mainRow,it->first));
             if(it->second == 0){
                 it = fastRep[rowToUpdate].erase(it);
@@ -202,7 +202,7 @@ void Matrix::updateRowForGauss(int rowToUpdate, int mainRow) {
 
 int Matrix::rowWithTheHighestCoefficientInColumn(int i) {
     int maxRow = i;
-    int max = diagonalElement(i);
+    double max = diagonalElement(i);
     for (int j = i; j < totalPages; ++j) {
         map<int,double> * currentRow= &fastRep[j];
         map<int,double>::iterator it = currentRow->find(i);
@@ -223,7 +223,7 @@ double Matrix::getElement(int row, int col) {
     return 0;
 }
 
-int Matrix::diagonalElement(int i) {
+double Matrix::diagonalElement(int i) {
     return getElement(i,i);
 }
 
