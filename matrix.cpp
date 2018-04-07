@@ -97,11 +97,40 @@ void Matrix::addMatrix(Matrix a) {
     }
 }
 
-void Matrix::multiplyMatrix(Matrix a) {
-    assert(totalPages == a.totalPages);
+void Matrix::multiplyMatrix(Matrix B) {
+    assert(totalPages == B.totalPages);
 
     vector<map<int, double>> pivotalRep = {};
 
+    for (int i = 0; i < totalPages; ++i) {
+        map<int, double> resultRow;
+        for (int j = 0; j < totalPages; ++j) {
+            auto itA  = fastRep[i].begin();
+            double value = 0;
+            while (itA != fastRep[i].end()) {
+                auto itB = B.fastRep[itA->first].find(j);
+                double valueB;
+
+                if (itB == B.fastRep[itA->first].end()) {
+                    valueB = 0;
+                } else {
+                    valueB = itB->second;
+                }
+
+                value += itA->second * valueB;
+                itA++;
+            }
+
+            pair<int, double> elem(j, value);
+            resultRow.insert(elem);
+        }
+        pivotalRep.push_back(resultRow);
+
+    }
+
+    swapFastAndPivotal(pivotalRep);
+
+/*
     buildFullRep();
     a.buildFullRep();
     for (int i = 0; i < totalPages; ++i) {
@@ -119,6 +148,8 @@ void Matrix::multiplyMatrix(Matrix a) {
     swapFastAndPivotal(pivotalRep);
 
     buildFullRep();
+
+    */
 }
 
 vector<double> * Matrix::getRowNumber(int i) {

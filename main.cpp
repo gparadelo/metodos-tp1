@@ -11,16 +11,20 @@ int main(int argc, char *argv[]) {
     int p(int argv[2]);
 
 
-    Matrix id;
-    id.buildIdentity(3);
-    id.logFullRep();
-    id.scalarMultiply(3);
-    id.logFullRep();
-//    Matrix W(&input);
-//    Matrix B(&b);
-//
-////    W.multiplyMatrix(B);
-//    W.logFullRep();
+//    Matrix id;
+//    id.buildIdentity(3);
+//    id.logFullRep();
+//    id.scalarMultiply(3);
+//    id.logFullRep();
+
+
+    Matrix W(&input);
+    Matrix B(&b);
+
+    W.logFullRep();
+    B.logFullRep();
+    W.multiplyMatrix(B);
+    W.logFullRep();
 //    W.gaussianEliminate();
 //    W.logFullRep();
 ////
