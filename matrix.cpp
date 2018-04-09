@@ -311,14 +311,11 @@ void Matrix::buildIdentity(int i) {
     }
 }
 
-vector<double> vectorCj (vector<map<int,double>>& matrix) {
-    vector<double> res;
-    for(int j = 0; j<matrix.size(); j++){
-        res[j]=0;
-    }
-    for (int i = 0; i < matrix.size(); ++i) {
-        map<int, double>::iterator it  = matrix[i].begin();
-        while (it != matrix[i].end()){
+vector<double> Matrix::vectorCj() {
+    vector<double> res(fastRep.size(),0);
+    for (int i = 0; i < fastRep.size(); ++i) {
+        map<int, double>::iterator it  = fastRep[i].begin();
+        while (it != fastRep[i].end()){
             res[it->first] =+ it->second;
             it++;
         }
@@ -326,12 +323,12 @@ vector<double> vectorCj (vector<map<int,double>>& matrix) {
     return res;
 }
 
-vector<map<int,double>> Matrix::Dmatrix (vector<double> cj) {
-    vector<double> vectorCJ = vectorCj(fastRep);
-    vector<map<int,double>> Dmatrix;
-    for(int i = 0; i < vectorCJ.size(); i++)
-    setElement(&Dmatrix,i,i,vectorCJ[i]);
-    return Dmatrix;
+vector<map<int,double>> Matrix::Dmatrix() {
+    vector<double> CJ = vectorCj();
+    vector<map<int,double>> D;
+    for(int i = 0; i < CJ.size(); i++)
+        setElement(&D,i,i,CJ[i]);
+    return D;
 }
 
 

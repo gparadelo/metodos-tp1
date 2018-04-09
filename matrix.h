@@ -42,7 +42,7 @@ public:
 
 
     vector<double> resolveTheProlem (vector<double> sol);
-    vector<map<int,double>> Dmatrix (vector<double> cj);
+    vector<map<int,double>> Dmatrix ();
 
 private:
 
@@ -75,7 +75,7 @@ private:
 
     void pivotRows(int i, int column);
 
-    vector<double> vectorCj (vector<map<int, double>>& matrix);
+    vector<double> vectorCj ();
 };
 
 
