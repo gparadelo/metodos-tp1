@@ -42,6 +42,8 @@ public:
 
 
     vector<double> resolveTheProlem (vector<double> sol);
+    vector<map<int,double>> Dmatrix (vector<double> cj);
+
 private:
 
     int totalLinks;
@@ -72,6 +74,8 @@ private:
     double getElement(int update, int row);
 
     void pivotRows(int i, int column);
+
+    vector<double> vectorCj (vector<map<int, double>>& matrix);
 };
 
 
