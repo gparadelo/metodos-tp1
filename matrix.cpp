@@ -26,8 +26,10 @@ Matrix::Matrix(ifstream *input) {
     for (int i = 0; i < totalLinks; ++i) {
         *(input) >> saliente;
         *(input) >> entrante;
-        pair<int, double> elem(saliente - 1, 1);
-        fastRep[entrante - 1].insert(elem);
+        if (entrante != saliente) {
+            pair<int, double> elem(saliente - 1, 1);
+            fastRep[entrante - 1].insert(elem);
+        }
     }
 
 
