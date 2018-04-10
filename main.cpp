@@ -25,21 +25,16 @@ int main(int argc, char *argv[]) {
     p = stod( argv[2]);
 
     cout << p << endl;
-//    Matrix id;
-//    id.buildIdentity(3);
-//    id.logFullRep();
-//    id.scalarMultiply(3);
-//    id.logFullRep();
 
 
     Matrix W(&input);
     Matrix D;
     D.buildDMatrix(W);
 
-//    W.logFullRep();
+    W.logFullRep();
     W.multiplyMatrix(D);
 
-//    W.logFullRep();
+    W.logFullRep();
     W.scalarMultiply(-p);
     W.logFullRep();
 
@@ -54,7 +49,8 @@ int main(int argc, char *argv[]) {
     cout << "The matrix is:" << endl;
     I.logFullRep();
 
-    vector<double> b = {1.5,2.5,4.5};
+    vector<double> b(I.numberOfRows(),1);
+
     cout << "We want to find solutions for:" << endl;
     cout << b;
 

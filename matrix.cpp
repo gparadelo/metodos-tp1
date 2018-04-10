@@ -212,7 +212,7 @@ void Matrix::gaussianEliminate() {
         for (int j = i + 1; j < fastRep.size(); ++j) {
 //            Para cada fila que le sigue
             updateRowForGauss(j, i);
-            logFullRep();
+//            logFullRep();
 
         }
     }
