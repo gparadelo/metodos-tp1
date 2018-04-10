@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/mike/facu/metodos/tp1/metodos-tp1/main.cpp
+/home/facundo/Escritorio/metodos-tp1/main.cpp
 fstream
 -
 iostream
 -
 matrix.h
-/home/mike/facu/metodos/tp1/metodos-tp1/matrix.h
+/home/facundo/Escritorio/metodos-tp1/matrix.h
 
-/home/mike/facu/metodos/tp1/metodos-tp1/matrix.cpp
+/home/facundo/Escritorio/metodos-tp1/matrix.cpp
 matrix.h
-/home/mike/facu/metodos/tp1/metodos-tp1/matrix.h
+/home/facundo/Escritorio/metodos-tp1/matrix.h
 
-/home/mike/facu/metodos/tp1/metodos-tp1/matrix.h
+/home/facundo/Escritorio/metodos-tp1/matrix.h
 fstream
 -
 iostream

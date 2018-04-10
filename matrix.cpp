@@ -224,9 +224,11 @@ void Matrix::gaussianEliminate() {
 void Matrix::updateRowForGauss(int rowToUpdate, int mainRow) {
     map<int, double>::iterator it = fastRep[rowToUpdate].begin();
     if (it->first > mainRow) return; //Si el primer elemento no nulo está en mas a la derecha que la diagonal
+    double aToZeroOut = getElement(rowToUpdate, it->first); //guardo el primer elemento no nulo de la fila que voy a actualizar, el multiplicador
     while (it != fastRep[rowToUpdate].end()) {
-        double aToZeroOut = getElement(rowToUpdate, it->first);
-        it->second -= aToZeroOut / diagonalElement(mainRow) * (getElement(mainRow, it->first));
+        double diagonal = diagonalElement(mainRow); //tomo el elemento de la diagonal de la fila que no modifico, el denominador
+        double mainRowElement = getElement(mainRow, it->first); //tomo el elemento de la fila que no modifico
+        it->second = it->second - (aToZeroOut / diagonal) * (mainRowElement);
         if (it->second == 0 || it->second == -0) {
             it = fastRep[rowToUpdate].erase(it);
         } else {
