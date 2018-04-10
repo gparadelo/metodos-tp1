@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/facublanco/Escritorio/metodos-tp1/main.cpp" "/home/facublanco/Escritorio/metodos-tp1/cmake-build-debug/CMakeFiles/pageRank.dir/main.cpp.o"
-  "/home/facublanco/Escritorio/metodos-tp1/matrix.cpp" "/home/facublanco/Escritorio/metodos-tp1/cmake-build-debug/CMakeFiles/pageRank.dir/matrix.cpp.o"
+  "/home/mike/facu/metodos/tp1/metodos-tp1/main.cpp" "/home/mike/facu/metodos/tp1/metodos-tp1/cmake-build-debug/CMakeFiles/pageRank.dir/main.cpp.o"
+  "/home/mike/facu/metodos/tp1/metodos-tp1/matrix.cpp" "/home/mike/facu/metodos/tp1/metodos-tp1/cmake-build-debug/CMakeFiles/pageRank.dir/matrix.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

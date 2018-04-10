@@ -34,15 +34,18 @@ public:
     void buildFullRep();
     void logFullRep();
     void addMatrix(Matrix a);
-    void scalarMultiply(int x);
+    void scalarMultiply(double x);
 
+    int numberOfRows();
     void gaussianEliminate();
     int getTotalPages();
     int getTotalLinks();
 
 
     vector<double> resolveTheProlem (vector<double> sol);
-    vector<map<int,double>> Dmatrix ();
+    void buildDMatrix (Matrix);
+    vector<double> vectorCj ();
+
 
 private:
 
@@ -75,7 +78,6 @@ private:
 
     void pivotRows(int i, int column);
 
-    vector<double> vectorCj ();
 };
 
 

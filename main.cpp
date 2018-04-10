@@ -4,13 +4,27 @@
 
 using namespace std;
 
+
+template < class T >
+std::ostream& operator << (std::ostream& os, const std::vector<T>& v)
+{
+    os << "[";
+    for (typename std::vector<T>::const_iterator ii = v.begin(); ii != v.end(); ++ii)
+    {
+        os << " " << *ii;
+    }
+    os << "]";
+    return os;
+}
+
+
 int main(int argc, char *argv[]) {
 
     ifstream input(argv[1]);
-    ifstream b("../tests/b.txt");
-    int p(int argv[2]);
+    double p;
+    p = stod( argv[2]);
 
-
+    cout << p << endl;
 //    Matrix id;
 //    id.buildIdentity(3);
 //    id.logFullRep();
@@ -19,53 +33,37 @@ int main(int argc, char *argv[]) {
 
 
     Matrix W(&input);
-    Matrix B(&b);
+    Matrix D;
+    D.buildDMatrix(W);
 
-    W.logFullRep();
-    B.logFullRep();
-    W.multiplyMatrix(B);
-    W.logFullRep();
-//    W.gaussianEliminate();
 //    W.logFullRep();
-////
-//    vector<double> sol({4,2,3});
-//    vector<double> res = W.resolveTheProlem(sol);
-//
-//    cout << "Solucion: [" ;
-//
-//    for (int i = 0; i < W.getTotalPages(); ++i)
-//    {
-//        cout << res[i] << ", ";
-//    }
-//
-//    cout << "]";
+    W.multiplyMatrix(D);
 
-//
-//    B.logFullRep();
-//
-//    W.addMatrix(W);
 //    W.logFullRep();
-//
-//    W.multiplyMatrix(B);
-//    W.logFullRep();
-//
-//    int x = 3;
-//    W.scalarMultiply(x);
-//    W.logFullRep();
-//
-//    W.gaussianEliminate();
-//    W.logFullRep();
-//
-//
-//    vector<double> res = W.resolveTheProlem(sol);
-//    cout << "Solucion: [" ;
-//
-//    for (int i = 0; i < W.getTotalPages(); ++i)
-//    {
-//        cout << res[i] << ", ";
-//    }
-//
-//    cout << "]";
+    W.scalarMultiply(-p);
+    W.logFullRep();
+
+    Matrix I;
+    I.buildIdentity(W.numberOfRows());
+
+    I.addMatrix(W);
+
+    I.logFullRep();
+
+    I.gaussianEliminate();
+    cout << "The matrix is:" << endl;
+    I.logFullRep();
+
+    vector<double> b = {1.5,2.5,4.5};
+    cout << "We want to find solutions for:" << endl;
+    cout << b;
+
+    vector<double> solution = I.resolveTheProlem(b);
+    cout << "The solution is" << solution;
+
+
+
+
 
     return 0;
 

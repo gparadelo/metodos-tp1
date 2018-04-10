@@ -43,13 +43,13 @@ void Matrix::logContents() {
 }
 
 void Matrix::buildFullRep() {
-    vector<vector<double>> matriz((unsigned long)totalPages, vector<double>(totalPages, 0));
+    vector<vector<double>> matriz((unsigned long) totalPages, vector<double>(totalPages, 0));
     fullRep = matriz;
 
     for (int i = 0; i < totalPages; ++i) {
         auto it = fastRep[i].begin();
 
-        while(it != fastRep[i].end()){
+        while (it != fastRep[i].end()) {
             fullRep[i][it->first] = it->second;
             it++;
         }
@@ -89,7 +89,11 @@ void Matrix::addMatrix(Matrix a) {
 //            O(log(elementos de la fila))
             if (fastRep[i].find(aIt->first) != fastRep[i].end()) {
                 it->second += aIt->second;
-            } else {
+                if(it->second == 0){
+                    it = fastRep[i].erase(it);
+                    continue;
+                }
+            } else if(aIt->second != 0) {
                 fastRep[i].insert(*(aIt));
             }
             aIt++;
@@ -105,7 +109,7 @@ void Matrix::multiplyMatrix(Matrix B) {
     for (int i = 0; i < totalPages; ++i) {
         map<int, double> resultRow;
         for (int j = 0; j < totalPages; ++j) {
-            auto itA  = fastRep[i].begin();
+            auto itA = fastRep[i].begin();
             double value = 0;
             while (itA != fastRep[i].end()) {
                 auto itB = B.fastRep[itA->first].find(j);
@@ -152,12 +156,12 @@ void Matrix::multiplyMatrix(Matrix B) {
     */
 }
 
-vector<double> * Matrix::getRowNumber(int i) {
+vector<double> *Matrix::getRowNumber(int i) {
     return &fullRep[i];
 }
 
-vector<double>  Matrix::getColumnNumber(int j) {
-    vector<double> res(totalPages,0);
+vector<double> Matrix::getColumnNumber(int j) {
+    vector<double> res(totalPages, 0);
 
     for (int i = 0; i < totalPages; ++i) {
         res[i] = fullRep[i][j];
@@ -169,7 +173,7 @@ vector<double>  Matrix::getColumnNumber(int j) {
 double Matrix::doVectorMultiplication(vector<double> *row, vector<double> *col) {
     assert(row->size() == col->size());
 
-    double acc = 0 ;
+    double acc = 0;
     for (int i = 0; i < row->size(); ++i) {
         acc += (*row)[i] * (*col)[i];
     }
@@ -177,9 +181,9 @@ double Matrix::doVectorMultiplication(vector<double> *row, vector<double> *col) 
     return acc;
 }
 
-void Matrix::setElement(vector<map<int,double >>* matrix, int i , int j, double a) {
-    if (a==0) return;
-    while(matrix->size()  < i + 1){
+void Matrix::setElement(vector<map<int, double >> *matrix, int i, int j, double a) {
+    if (a == 0) return;
+    while (matrix->size() < i + 1) {
         map<int, double> newMap;
         matrix->push_back(newMap);
     }
@@ -187,7 +191,7 @@ void Matrix::setElement(vector<map<int,double >>* matrix, int i , int j, double 
     (*matrix)[i].insert(elem);
 }
 
-void Matrix::swapFastAndPivotal(vector<map<int,double>>& pivotalRep) {
+void Matrix::swapFastAndPivotal(vector<map<int, double>> &pivotalRep) {
     fastRep.swap(pivotalRep);
 }
 
@@ -195,19 +199,19 @@ void Matrix::gaussianEliminate() {
     cout << "Doing gauss" << endl;
     for (int i = 0; i < fastRep.size(); ++i) {
 //        Para cada fila
-        int a = diagonalElement(i);
-        if(a == 0) {
+        double a = diagonalElement(i);
+        if (a == 0) {
             pivotRows(i, rowWithTheHighestCoefficientInColumn(i));
 //            Acordarse de guardar este pivoteo
         }
-        int b = diagonalElement(i);
-        if(b == 0 ){
+        double b = diagonalElement(i);
+        if (b == 0) {
             continue;
 //        No es li
         }
         for (int j = i + 1; j < fastRep.size(); ++j) {
 //            Para cada fila que le sigue
-            updateRowForGauss(j,i);
+            updateRowForGauss(j, i);
             logFullRep();
 
         }
@@ -216,29 +220,28 @@ void Matrix::gaussianEliminate() {
 }
 
 void Matrix::updateRowForGauss(int rowToUpdate, int mainRow) {
-        map<int, double>::iterator it = fastRep[rowToUpdate].begin();
-        if(it->first > mainRow) return; //Si el primer elemento no nulo está en mas a la derecha que la diagonal
-        while(it != fastRep[rowToUpdate].end()){
-            double aToZeroOut = getElement(rowToUpdate, it->first);
-            it->second -= aToZeroOut / diagonalElement(mainRow) * (getElement(mainRow,it->first));
-            if(it->second == 0){
-                it = fastRep[rowToUpdate].erase(it);
-            } else {
-                it++;
-            }
+    map<int, double>::iterator it = fastRep[rowToUpdate].begin();
+    if (it->first > mainRow) return; //Si el primer elemento no nulo está en mas a la derecha que la diagonal
+    while (it != fastRep[rowToUpdate].end()) {
+        double aToZeroOut = getElement(rowToUpdate, it->first);
+        it->second -= aToZeroOut / diagonalElement(mainRow) * (getElement(mainRow, it->first));
+        if (it->second == 0 || it->second == -0) {
+            it = fastRep[rowToUpdate].erase(it);
+        } else {
+            it++;
         }
+    }
 }
-
 
 
 int Matrix::rowWithTheHighestCoefficientInColumn(int i) {
     int maxRow = i;
     double max = diagonalElement(i);
     for (int j = i; j < totalPages; ++j) {
-        map<int,double> * currentRow= &fastRep[j];
-        map<int,double>::iterator it = currentRow->find(i);
-        if(it != currentRow->end()){
-            if (it->second > max){
+        map<int, double> *currentRow = &fastRep[j];
+        map<int, double>::iterator it = currentRow->find(i);
+        if (it != currentRow->end()) {
+            if (it->second > max) {
                 maxRow = j;
                 max = it->second;
             }
@@ -248,23 +251,23 @@ int Matrix::rowWithTheHighestCoefficientInColumn(int i) {
 }
 
 double Matrix::getElement(int row, int col) {
-    if(fastRep[row].find(col) != fastRep[row].end()){
+    if (fastRep[row].find(col) != fastRep[row].end()) {
         return fastRep[row].find(col)->second;
     }
     return 0;
 }
 
 double Matrix::diagonalElement(int i) {
-    return getElement(i,i);
+    return getElement(i, i);
 }
 
 void Matrix::pivotRows(int i, int j) {
-    swap(fastRep[i],fastRep[j]);
+    swap(fastRep[i], fastRep[j]);
 }
 
-void Matrix::scalarMultiply(int x) {
+void Matrix::scalarMultiply(double x) {
     for (int i = 0; i < totalPages; ++i) {
-        map<int,double>::iterator it = fastRep[i].begin();
+        map<int, double>::iterator it = fastRep[i].begin();
 
         while (it != fastRep[i].end()) {
             it->second *= x;
@@ -274,29 +277,32 @@ void Matrix::scalarMultiply(int x) {
 
 }
 
-vector<double> Matrix::resolveTheProlem (vector<double> sol) {
-    vector<double> res(sol.size(),0);
-    for (int i = fastRep.size()-1; i >= 0; i--){
+vector<double> Matrix::resolveTheProlem(vector<double> sol) {
+    vector<double> res(sol.size(), 0);
+
+    for (int i = fastRep.size() - 1; i >= 0; i--) {
         map<int, double>::iterator it = fastRep[i].end();
         it--;
         double incognita = sol[i];
-        int j = fastRep.size()-1;
-        while (it != fastRep[i].begin()){
-            incognita -= (it->second*res[j]);            
+        int j = fastRep.size() - 1;
+        while (it != fastRep[i].begin()) {
+            double a = it ->second;
+            double el = res[it->first];
+            incognita -= (a * el);
             it--;
             j--;
         }
 //        assert(it->second == 0);
-        res[i] = incognita/it->second;        
+        res[i] = incognita / it->second;
     }
     return res;
 }
 
-int Matrix::getTotalPages(){
+int Matrix::getTotalPages() {
     return totalPages;
 }
 
-int Matrix::getTotalLinks(){
+int Matrix::getTotalLinks() {
     return totalLinks;
 }
 
@@ -304,7 +310,7 @@ void Matrix::buildIdentity(int i) {
     totalLinks = i;
     totalPages = i;
     for (int j = 0; j < i; ++j) {
-        map<int,double> row;
+        map<int, double> row;
         pair<int, double> elem(j, 1);
         row.insert(elem);
         fastRep.push_back(row);
@@ -312,26 +318,30 @@ void Matrix::buildIdentity(int i) {
 }
 
 vector<double> Matrix::vectorCj() {
-    vector<double> res(fastRep.size(),0);
+    vector<double> res(fastRep.size(), 0);
+
     for (int i = 0; i < fastRep.size(); ++i) {
-        map<int, double>::iterator it  = fastRep[i].begin();
-        while (it != fastRep[i].end()){
-            res[it->first] =+ it->second;
+        map<int, double>::iterator it = fastRep[i].begin();
+        while (it != fastRep[i].end()) {
+            res[it->first] += it->second;
             it++;
         }
     }
     return res;
 }
 
-vector<map<int,double>> Matrix::Dmatrix() {
-    vector<double> CJ = vectorCj();
-    vector<map<int,double>> D;
-    for(int i = 0; i < CJ.size(); i++)
-        setElement(&D,i,i,CJ[i]);
-    return D;
+void Matrix::buildDMatrix(Matrix A) {
+    totalLinks = A.fastRep.size();
+    totalPages = A.fastRep.size();
+    vector<double> CJ = A.vectorCj();
+    for (int i = 0; i < CJ.size(); i++) {
+        setElement(&fastRep, i, i, 1/CJ[i]);
+    }
 }
 
-
+int Matrix::numberOfRows() {
+    return fastRep.size();
+}
 
 
 
