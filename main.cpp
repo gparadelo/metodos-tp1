@@ -54,8 +54,6 @@ int main(int argc, char *argv[]) {
     timeType endMultiply= high_resolution_clock::now();
     duration<double> elapsedMultiply = duration_cast<duration<double>>(endMultiply - startMultiply);
 
-
-
     W.scalarMultiply(-p);
     Matrix I;
     I.buildIdentity(W.numberOfRows());
@@ -69,14 +67,14 @@ int main(int argc, char *argv[]) {
     duration<double> elapsedAdd = duration_cast<duration<double>>(endAdd - startAdd);
 
 
-    I.logFullRep();
+//    I.logFullRep();
 //    Empezamos a medir el tiempo de Gauss
     timeType startGauss = high_resolution_clock::now();
     I.gaussianEliminate();
 //    Paramos el reloj
     timeType endGauss= high_resolution_clock::now();
     duration<double> elapsedGauss = duration_cast<duration<double>>(endGauss - startGauss);
-    I.logFullRep();
+//    I.logFullRep();
 
 
     vector<double> b(I.numberOfRows(),1);
@@ -91,11 +89,10 @@ int main(int argc, char *argv[]) {
     duration<double> elapsedResolve = duration_cast<duration<double>>(endResolve - startResolve);
 
 
+    cerr << elapsedMultiply.count() << ';' <<elapsedAdd.count() << ';' << elapsedGauss.count() << ';' << elapsedResolve.count() << endl;
 //
-//    cerr << elapsedMultiply.count() << ';' <<elapsedAdd.count() << ';' << elapsedGauss.count() << ';' << elapsedResolve.count() << endl;
 //
-//
-//    cout << p << endl;
+    cout << p << endl;
     cout <<  normalize(solution);
 //
 //
