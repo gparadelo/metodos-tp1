@@ -17,6 +17,20 @@ std::ostream& operator << (std::ostream& os, const std::vector<T>& v)
     return os;
 }
 
+vector<double> normalize(vector<double> &v);
+vector<double> normalize(vector<double> &v){
+    double acc = 0;
+    for (int i = 0; i < v.size(); ++i) {
+        acc += v[i];
+    }
+    for (int j = 0; j < v.size(); ++j) {
+        v[j] = v[j]/acc;
+    }
+    return v;
+}
+
+
+
 
 int main(int argc, char *argv[]) {
 
@@ -55,7 +69,7 @@ int main(int argc, char *argv[]) {
     cout << b;
 
     vector<double> solution = I.resolveTheProlem(b);
-    cout << "The solution is" << solution;
+    cout << "The solution is" << normalize(solution);
 
 
 
