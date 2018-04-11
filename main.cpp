@@ -8,12 +8,12 @@ using namespace std;
 template < class T >
 std::ostream& operator << (std::ostream& os, const std::vector<T>& v)
 {
-    os << "[";
+//    os << "[";
     for (typename std::vector<T>::const_iterator ii = v.begin(); ii != v.end(); ++ii)
     {
-        os << " " << *ii;
+        os << *ii << endl;
     }
-    os << "]";
+//    os << "]";
     return os;
 }
 
@@ -38,38 +38,40 @@ int main(int argc, char *argv[]) {
     double p;
     p = stod( argv[2]);
 
-    cout << p << endl;
 
 
     Matrix W(&input);
     Matrix D;
     D.buildDMatrix(W);
 
-    W.logFullRep();
+//    W.logFullRep();
     W.multiplyMatrix(D);
 
-    W.logFullRep();
+//    W.logFullRep();
     W.scalarMultiply(-p);
-    W.logFullRep();
+//    W.logFullRep();
 
     Matrix I;
     I.buildIdentity(W.numberOfRows());
 
     I.addMatrix(W);
 
-    I.logFullRep();
-
+//    I.logFullRep();
+//    cout << "Doing gauss" << endl;
     I.gaussianEliminate();
-    cout << "The matrix is:" << endl;
-    I.logFullRep();
+//    cout << "The matrix is:" << endl;
+//    I.logFullRep();
 
     vector<double> b(I.numberOfRows(),1);
 
-    cout << "We want to find solutions for:" << endl;
-    cout << b;
+//    cout << "We want to find solutions for:" << endl;
+//    cout << b;
 
     vector<double> solution = I.resolveTheProlem(b);
-    cout << "The solution is" << normalize(solution);
+//    cout << "The solution is" << normalize(solution);
+
+    cout << p << endl;
+    cout <<  normalize(solution);
 
 
 

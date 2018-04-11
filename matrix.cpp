@@ -198,7 +198,6 @@ void Matrix::swapFastAndPivotal(vector<map<int, double>> &pivotalRep) {
 }
 
 void Matrix::gaussianEliminate() {
-    cout << "Doing gauss" << endl;
     for (int i = 0; i < fastRep.size(); ++i) {
 //        Para cada fila
         double a = diagonalElement(i);
