@@ -1,8 +1,10 @@
 #include <fstream>
 #include <iostream>
 #include "matrix.h"
+#include <chrono>
 
 using namespace std;
+using namespace std::chrono;
 
 
 template < class T >
@@ -31,7 +33,7 @@ vector<double> normalize(vector<double> &v){
 
 
 
-
+typedef high_resolution_clock::time_point timeType;
 int main(int argc, char *argv[]) {
 
     ifstream input(argv[1]);
@@ -44,37 +46,60 @@ int main(int argc, char *argv[]) {
     Matrix D;
     D.buildDMatrix(W);
 
-//    W.logFullRep();
+//    Empezamos a medir el tiempo de multiplicar
+    timeType startMultiply = high_resolution_clock::now();
+
     W.multiplyMatrix(D);
+//    Paramos el reloj
+    timeType endMultiply= high_resolution_clock::now();
+    duration<double> elapsedMultiply = duration_cast<duration<double>>(endMultiply - startMultiply);
 
-//    W.logFullRep();
+
+
     W.scalarMultiply(-p);
-//    W.logFullRep();
-
     Matrix I;
     I.buildIdentity(W.numberOfRows());
 
+//    Empezamos a medir el tiempo de sumar
+    timeType startAdd = high_resolution_clock::now();
     I.addMatrix(W);
 
-//    I.logFullRep();
-//    cout << "Doing gauss" << endl;
+//    Paramos el reloj
+    timeType endAdd= high_resolution_clock::now();
+    duration<double> elapsedAdd = duration_cast<duration<double>>(endAdd - startAdd);
+
+
+    I.logFullRep();
+//    Empezamos a medir el tiempo de Gauss
+    timeType startGauss = high_resolution_clock::now();
     I.gaussianEliminate();
-//    cout << "The matrix is:" << endl;
-//    I.logFullRep();
+//    Paramos el reloj
+    timeType endGauss= high_resolution_clock::now();
+    duration<double> elapsedGauss = duration_cast<duration<double>>(endGauss - startGauss);
+    I.logFullRep();
+
 
     vector<double> b(I.numberOfRows(),1);
 
-//    cout << "We want to find solutions for:" << endl;
-//    cout << b;
+//    Empezamos a medir el tiempo de resolver el sistema
+    timeType startResolve = high_resolution_clock::now();
 
     vector<double> solution = I.resolveTheProlem(b);
-//    cout << "The solution is" << normalize(solution);
 
-    cout << p << endl;
+//    Paramos el reloj
+    timeType endResolve= high_resolution_clock::now();
+    duration<double> elapsedResolve = duration_cast<duration<double>>(endResolve - startResolve);
+
+
+//
+//    cerr << elapsedMultiply.count() << ';' <<elapsedAdd.count() << ';' << elapsedGauss.count() << ';' << elapsedResolve.count() << endl;
+//
+//
+//    cout << p << endl;
     cout <<  normalize(solution);
-
-
-
+//
+//
+//
 
 
     return 0;

@@ -78,6 +78,7 @@ private:
 
     void pivotRows(int i, int column);
 
+    vector<double> solutionsVector;
 };
 
 

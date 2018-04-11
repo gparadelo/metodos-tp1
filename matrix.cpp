@@ -32,6 +32,9 @@ Matrix::Matrix(ifstream *input) {
         }
     }
 
+    solutionsVector = vector<double>(totalPages,1);
+
+
 
 }
 
@@ -63,8 +66,16 @@ void Matrix::logFullRep() {
     buildFullRep();
     cout << "Logging full rep:" << endl;
     for (int i = 0; i < totalPages; ++i) {
+        cout << " [ ";
         for (int j = 0; j < totalPages; ++j) {
-            cout << fullRep[i][j] << ' ';
+            cout << fullRep[i][j];
+            if (j + 1 < totalPages){
+                cout << " , ";
+            }
+        }
+            cout << " ] ";
+        if (i + 1 < totalPages){
+            cout << " , ";
         }
         cout << endl;
     }
@@ -214,7 +225,6 @@ void Matrix::gaussianEliminate() {
 //            Para cada fila que le sigue
             updateRowForGauss(j, i);
 //            logFullRep();
-
         }
     }
 
@@ -222,18 +232,25 @@ void Matrix::gaussianEliminate() {
 
 void Matrix::updateRowForGauss(int rowToUpdate, int mainRow) {
     map<int, double>::iterator it = fastRep[rowToUpdate].begin();
-    if (it->first > mainRow) return; //Si el primer elemento no nulo está en mas a la derecha que la diagonal
+    if (it->first > mainRow) return; //Si el primer elemento no nulo está en mas a la derecha que la diagonal me voy.
+
     double aToZeroOut = getElement(rowToUpdate, it->first); //guardo el primer elemento no nulo de la fila que voy a actualizar, el multiplicador
+
+    double diagonal = diagonalElement(mainRow); //tomo el elemento de la diagonal de la fila que no modifico, el denominador
+
     while (it != fastRep[rowToUpdate].end()) {
-        double diagonal = diagonalElement(mainRow); //tomo el elemento de la diagonal de la fila que no modifico, el denominador
         double mainRowElement = getElement(mainRow, it->first); //tomo el elemento de la fila que no modifico
         it->second = it->second - (aToZeroOut / diagonal) * (mainRowElement);
+
+
         if (it->second == 0 || it->second == -0) {
             it = fastRep[rowToUpdate].erase(it);
         } else {
             it++;
         }
     }
+    //        Modifiquemos tambien el solutions vector
+    solutionsVector[rowToUpdate] -= (aToZeroOut / diagonal) * solutionsVector[mainRow];
 }
 
 
@@ -281,12 +298,12 @@ void Matrix::scalarMultiply(double x) {
 }
 
 vector<double> Matrix::resolveTheProlem(vector<double> sol) {
-    vector<double> res(sol.size(), 0);
+    vector<double> res(solutionsVector.size(), 0);
 
     for (int i = fastRep.size() - 1; i >= 0; i--) {
         map<int, double>::iterator it = fastRep[i].end();
         it--;
-        double incognita = sol[i];
+        double incognita = solutionsVector[i];
         int j = fastRep.size() - 1;
         while (it != fastRep[i].begin()) {
             double a = it ->second;
@@ -312,6 +329,7 @@ int Matrix::getTotalLinks() {
 void Matrix::buildIdentity(int i) {
     totalLinks = i;
     totalPages = i;
+    solutionsVector = vector<double>(i,1);
     for (int j = 0; j < i; ++j) {
         map<int, double> row;
         pair<int, double> elem(j, 1);
@@ -336,6 +354,7 @@ vector<double> Matrix::vectorCj() {
 void Matrix::buildDMatrix(Matrix A) {
     totalLinks = A.fastRep.size();
     totalPages = A.fastRep.size();
+    solutionsVector = vector<double>(A.fastRep.size(),1);
     vector<double> CJ = A.vectorCj();
     for (int i = 0; i < CJ.size(); i++) {
         setElement(&fastRep, i, i, 1/CJ[i]);
