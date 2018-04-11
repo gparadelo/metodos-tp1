@@ -46,6 +46,8 @@ public:
     void buildDMatrix (Matrix);
     vector<double> vectorCj ();
 
+    int numberOfLinks();
+
 
 private:
 

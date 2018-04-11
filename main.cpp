@@ -40,9 +40,14 @@ int main(int argc, char *argv[]) {
     double p;
     p = stod( argv[2]);
 
+    ofstream resultsFile;
+    ofstream timeFile;
+    resultsFile.open("../experimentacion/results/results.out");
+    timeFile.open("../experimentacion/results/time",std::ios_base::app);
 
 
     Matrix W(&input);
+    int totalLinks = W.getTotalLinks();
     Matrix D;
     D.buildDMatrix(W);
 
@@ -90,10 +95,19 @@ int main(int argc, char *argv[]) {
 
 
     cerr << elapsedMultiply.count() << ';' <<elapsedAdd.count() << ';' << elapsedGauss.count() << ';' << elapsedResolve.count() << endl;
+
+
+    timeFile << I.numberOfRows() << ';' << totalLinks << ';' << p << ';' << elapsedMultiply.count() << ';' <<elapsedAdd.count() << ';' << elapsedGauss.count() << ';' << elapsedResolve.count() << endl;
 //
 //
     cout << p << endl;
     cout <<  normalize(solution);
+
+    resultsFile << p << endl;
+    resultsFile <<  normalize(solution);
+
+    resultsFile.close();
+    timeFile.close();
 //
 //
 //

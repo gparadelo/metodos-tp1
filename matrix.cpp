@@ -365,4 +365,8 @@ int Matrix::numberOfRows() {
     return fastRep.size();
 }
 
+int Matrix::numberOfLinks() {
+    return totalLinks;
+}
+
 
