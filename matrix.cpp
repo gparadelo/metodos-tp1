@@ -121,52 +121,38 @@ void Matrix::multiplyMatrix(Matrix B) {
 
     for (int i = 0; i < totalPages; ++i) {
         map<int, double> resultRow;
-        for (int j = 0; j < totalPages; ++j) {
-            auto itA = fastRep[i].begin();
-            double value = 0;
-            while (itA != fastRep[i].end()) {
-                auto itB = B.fastRep[itA->first].find(j);
-                double valueB;
 
-                if (itB == B.fastRep[itA->first].end()) {
-                    valueB = 0;
-                } else {
-                    valueB = itB->second;
+        if (fastRep[i].begin() != fastRep[i].end()) {
+        //Solo calculo las filas que tienen al menos un elemento
+            for (int j = 0; j < totalPages; ++j) {
+                auto itA = fastRep[i].begin();
+                double value = 0;
+
+                while (itA != fastRep[i].end()) {
+                    auto itB = B.fastRep[itA->first].find(j);
+                    double valueB;
+
+                    if (itB == B.fastRep[itA->first].end()) {
+                        valueB = 0;
+                    } else {
+                        valueB = itB->second;
+                    }
+
+                    value += itA->second * valueB;
+                    itA++;
                 }
-
-                value += itA->second * valueB;
-                itA++;
+                if (value != 0) {
+                //Se ignoran las multiplicaciones que dan 0
+                    pair<int, double> elem(j, value);
+                    resultRow.insert(elem);
+                }
             }
-
-            pair<int, double> elem(j, value);
-            resultRow.insert(elem);
         }
         pivotalRep.push_back(resultRow);
 
     }
 
     swapFastAndPivotal(pivotalRep);
-
-/*
-    buildFullRep();
-    a.buildFullRep();
-    for (int i = 0; i < totalPages; ++i) {
-       vector<double> * row = getRowNumber(i);
-        for (int j = 0; j < totalPages; ++j) {
-            vector<double> col = a.getColumnNumber(j);
-
-//            Since a column isn't easily accessible from vector of rows representation, we build it and then pass the reference
-//            to the function
-            double elem = doVectorMultiplication(row,&col);
-            setElement(&pivotalRep, i,j,elem);
-        }
-    }
-
-    swapFastAndPivotal(pivotalRep);
-
-    buildFullRep();
-
-    */
 }
 
 vector<double> *Matrix::getRowNumber(int i) {
