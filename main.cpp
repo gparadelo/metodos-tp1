@@ -77,7 +77,7 @@ int main(int argc, char *argv[]) {
     timeType startGauss = high_resolution_clock::now();
     I.gaussianEliminate();
 
-    I.logFullRep();
+//    I.logFullRep();
 //    Paramos el reloj
     timeType endGauss= high_resolution_clock::now();
     duration<double> elapsedGauss = duration_cast<duration<double>>(endGauss - startGauss);

@@ -5,9 +5,11 @@
 #include "matrix.h"
 
 double NUMERIC_ERROR = 1e-17;
-bool isEqualWithError(double a,double b);
-bool isEqualWithError(double a,double b){
-    return fabs(a-b) < NUMERIC_ERROR;
+
+bool isEqualWithError(double a, double b);
+
+bool isEqualWithError(double a, double b) {
+    return fabs(a - b) < NUMERIC_ERROR;
 }
 
 
@@ -38,8 +40,7 @@ Matrix::Matrix(ifstream *input) {
         }
     }
 
-    solutionsVector = vector<double>(totalPages,1);
-
+    solutionsVector = vector<double>(totalPages, 1);
 
 
 }
@@ -75,12 +76,12 @@ void Matrix::logFullRep() {
         cout << " [ ";
         for (int j = 0; j < totalPages; ++j) {
             cout << fullRep[i][j];
-            if (j + 1 < totalPages){
+            if (j + 1 < totalPages) {
                 cout << " , ";
             }
         }
-            cout << " ] ";
-        if (i + 1 < totalPages){
+        cout << " ] ";
+        if (i + 1 < totalPages) {
             cout << " , ";
         }
         cout << endl;
@@ -108,11 +109,11 @@ void Matrix::addMatrix(Matrix a) {
 //            O(log(elementos de la fila))
             if (fastRep[i].find(aIt->first) != fastRep[i].end()) {
                 it->second += aIt->second;
-                if( isEqualWithError (it->second , 0)){
+                if (isEqualWithError(it->second, 0)) {
                     it = fastRep[i].erase(it);
                     continue;
                 }
-            } else if(!isEqualWithError(aIt->second , 0)) {
+            } else if (!isEqualWithError(aIt->second, 0)) {
                 fastRep[i].insert(*(aIt));
             }
             aIt++;
@@ -125,16 +126,20 @@ void Matrix::multiplyMatrix(Matrix B) {
 
     vector<map<int, double>> pivotalRep = {};
 
+//    O(n)
     for (int i = 0; i < totalPages; ++i) {
         map<int, double> resultRow;
 
-        if (fastRep[i].begin() != fastRep[i].end()) {
-        //Solo calculo las filas que tienen al menos un elemento
+        if (!fastRep[i].empty()) {
+            //Solo calculo las filas que tienen al menos un elemento
+//            O(n)
             for (int j = 0; j < totalPages; ++j) {
                 auto itA = fastRep[i].begin();
                 double value = 0;
 
+//                O(elems)
                 while (itA != fastRep[i].end()) {
+//                    (log(elems))
                     auto itB = B.fastRep[itA->first].find(j);
                     double valueB;
 
@@ -147,9 +152,10 @@ void Matrix::multiplyMatrix(Matrix B) {
                     value += itA->second * valueB;
                     itA++;
                 }
-                if (!isEqualWithError(value,0)) {
-                //Se ignoran las multiplicaciones que dan 0
+                if (!isEqualWithError(value, 0)) {
+                    //Se ignoran las multiplicaciones que dan 0
                     pair<int, double> elem(j, value);
+//                    O(log(elems))
                     resultRow.insert(elem);
                 }
             }
@@ -201,6 +207,7 @@ void Matrix::swapFastAndPivotal(vector<map<int, double>> &pivotalRep) {
 }
 
 void Matrix::gaussianEliminate() {
+//    O(n)
     for (int i = 0; i < fastRep.size(); ++i) {
 //        Para cada fila
         double a = diagonalElement(i);
@@ -213,6 +220,7 @@ void Matrix::gaussianEliminate() {
             continue;
 //        No es li
         }
+//        O(n)
         for (int j = i + 1; j < fastRep.size(); ++j) {
 //            Para cada fila que le sigue
             updateRowForGauss(j, i);
@@ -230,12 +238,14 @@ void Matrix::updateRowForGauss(int rowToUpdate, int mainRow) {
 
     double diagonal = diagonalElement(mainRow); //tomo el elemento de la diagonal de la fila que no modifico, el denominador
 
+//    O(elems)
     while (it != fastRep[rowToUpdate].end()) {
         double mainRowElement = getElement(mainRow, it->first); //tomo el elemento de la fila que no modifico
+
         it->second = it->second - ((aToZeroOut / diagonal) * (mainRowElement));
 
-
-        if (isEqualWithError(it->second , 0)) {
+        if (isEqualWithError(it->second, 0)) {
+//            O(log(elems))
             it = fastRep[rowToUpdate].erase(it);
         } else {
             it++;
@@ -298,7 +308,7 @@ vector<double> Matrix::resolveTheProlem(vector<double> sol) {
         double incognita = solutionsVector[i];
         int j = fastRep.size() - 1;
         while (it != fastRep[i].begin()) {
-            double a = it ->second;
+            double a = it->second;
             double el = res[it->first];
             incognita -= (a * el);
             it--;
@@ -321,7 +331,7 @@ int Matrix::getTotalLinks() {
 void Matrix::buildIdentity(int i) {
     totalLinks = i;
     totalPages = i;
-    solutionsVector = vector<double>(i,1);
+    solutionsVector = vector<double>(i, 1);
     for (int j = 0; j < i; ++j) {
         map<int, double> row;
         pair<int, double> elem(j, 1);
@@ -346,10 +356,10 @@ vector<double> Matrix::vectorCj() {
 void Matrix::buildDMatrix(Matrix A) {
     totalLinks = A.fastRep.size();
     totalPages = A.fastRep.size();
-    solutionsVector = vector<double>(A.fastRep.size(),1);
+    solutionsVector = vector<double>(A.fastRep.size(), 1);
     vector<double> CJ = A.vectorCj();
     for (int i = 0; i < CJ.size(); i++) {
-        setElement(&fastRep, i, i, 1/CJ[i]);
+        setElement(&fastRep, i, i, 1 / CJ[i]);
     }
 }
 
