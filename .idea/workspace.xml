@@ -13,39 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6e07d88b-be03-4bc0-89f6-c9b438a02a03" name="Default" comment="funcion DMatrix .cpp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/matrix.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/matrix.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/pageRank" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/pageRank" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/pageRank.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/pageRank.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experimentacion/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/experimentacion/Untitled.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experimentacion/results/results.out" beforeDir="false" afterPath="$PROJECT_DIR$/experimentacion/results/results.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experimentacion/results/time" beforeDir="false" afterPath="$PROJECT_DIR$/experimentacion/results/time" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matrix.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/matrix.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/matrix.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,11 +34,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="93" column="4" lean-forward="true" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
+            <state relative-caret-position="248">
+              <caret line="81" column="2" selection-start-line="81" selection-start-column="2" selection-end-line="81" selection-end-column="2" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#139#150#0" expanded="true" />
@@ -75,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="matrix.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="matrix.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matrix.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="231" column="39" selection-start-line="231" selection-start-column="39" selection-end-line="231" selection-end-column="39" />
+            <state relative-caret-position="2576">
+              <caret line="204" column="38" selection-start-line="204" selection-start-column="38" selection-end-line="204" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -88,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/matrix.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -97,9 +69,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setElement</find>
       <find>fullRep</find>
-      <find>1</find>
       <find>\s1</find>
       <find>multi</find>
       <find>buildId</find>
@@ -127,6 +97,8 @@
       <find>0.000000001</find>
       <find>e-17</find>
       <find>e-10</find>
+      <find>resu</find>
+      <find>1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,9 +114,9 @@
         <option value="$PROJECT_DIR$/experimentacion/resultados/test_completo.txt" />
         <option value="$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt.our_results" />
         <option value="$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt.time_results" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/matrix.h" />
         <option value="$PROJECT_DIR$/matrix.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -165,6 +137,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,7 +170,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -217,20 +189,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.pageRank-doc-completo">
+  <component name="RunManager" selected="Application.pageRank-Chicago">
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank" EXPLICIT_BUILD_TARGET_NAME="all" />
     <configuration name="inputs" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../experimentacion/inputs/1_21.txt 0.5" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank" />
+    <configuration name="pageRank-Chicago" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../tests/ChicagoRegional.txt 1" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank" />
     <configuration name="pageRank-Docentes" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../tests_docentes/tests_tp1/test_15_segundos.txt 0.5" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank" />
     <configuration name="pageRank-doc-15sec" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../tests_docentes/tests_tp1/test_15_segundos.txt 0.9" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank" />
     <configuration name="pageRank-doc-aleato_desor" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../tests_docentes/tests_tp1/test_aleatorio_desordenado.txt 0.76" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank" />
     <configuration name="pageRank-doc-aleatorio" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../tests_docentes/tests_tp1/test_aleatorio.txt 0.85" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank" />
     <configuration name="pageRank-doc-completo" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../tests_docentes/tests_tp1/test_completo.txt 0.5" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank" />
+    <configuration name="pageRank-facebook" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../tests/facebook_combined.txt 0" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank" />
     <configuration name="pageRank" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../tests/input.txt 0.5" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank" />
     <list>
       <item itemvalue="Application.Build All" />
       <item itemvalue="Application.pageRank" />
       <item itemvalue="Application.pageRank-Docentes" />
       <item itemvalue="Application.pageRank-doc-completo" />
+      <item itemvalue="Application.pageRank-facebook" />
+      <item itemvalue="Application.pageRank-Chicago" />
       <item itemvalue="Application.inputs" />
       <item itemvalue="Application.pageRank-doc-15sec" />
       <item itemvalue="Application.pageRank-doc-aleato_desor" />
@@ -262,6 +238,7 @@
       <workItem from="1523378046216" duration="20297000" />
       <workItem from="1523459189592" duration="4649000" />
       <workItem from="1523571031405" duration="5180000" />
+      <workItem from="1523636942798" duration="2781000" />
     </task>
     <task id="LOCAL-00001" summary="funcion scalarMultiply">
       <created>1522771233910</created>
@@ -281,7 +258,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83510000" />
+    <option name="totallyTimeSpent" value="86291000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -295,14 +272,13 @@
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25121292" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25067386" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32998326" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32684427" />
       <window_info anchor="bottom" id="CMake" order="7" weight="0.32998326" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32971212" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32991803" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32581967" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.71618855" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -314,26 +290,27 @@
       <window_info anchor="right" id="Data View" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32991803" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32756326" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32756326" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="3" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32998326" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="right" id="Data View" order="3" />
+      <window_info anchor="bottom" id="CMake" order="8" weight="0.32998326" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3295688" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32971212" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="CMake" order="8" weight="0.32998326" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3295688" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -391,6 +368,31 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="93" column="4" lean-forward="true" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#139#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matrix.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3465">
+          <caret line="231" column="39" selection-start-line="231" selection-start-column="39" selection-end-line="231" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/input.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -476,9 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_trivial.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_sin_links.txt.out">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -486,24 +485,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_sin_links.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_30_segundos.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/experimentacion/resultados/test_15_segundos.txt" />
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio_desordenado.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/experimentacion/resultados/test_sin_links.txt" />
     <entry file="file://$PROJECT_DIR$/experimentacion/resultados/test_completo.txt" />
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio_desordenado.txt.out">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt.out">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -518,24 +502,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_15_segundos.txt.out">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_30_segundos.txt.out">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio.txt.out">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt.our_results">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/experimentacion/inputs/1_1.txt" />
     <entry file="file://$PROJECT_DIR$/experimentacion/inputs/1_21.txt" />
@@ -545,9 +517,6 @@
     <entry file="file://$PROJECT_DIR$/experimentacion/inputs/80_1.txt" />
     <entry file="file://$PROJECT_DIR$/experimentacion/inputs/40_61.txt" />
     <entry file="file://$PROJECT_DIR$/experimentacion/inputs/100_0.061.txt" />
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt.time_results">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file:///usr/include/c++/5/bits/stl_function.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -558,25 +527,25 @@
     <entry file="file://$PROJECT_DIR$/matrix.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="93" column="4" lean-forward="true" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#139#150#0" expanded="true" />
-          </folding>
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/matrix.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="231" column="39" selection-start-line="231" selection-start-column="39" selection-end-line="231" selection-end-column="39" />
+        <state relative-caret-position="2576">
+          <caret line="204" column="38" selection-start-line="204" selection-start-column="38" selection-end-line="204" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="81" column="2" selection-start-line="81" selection-start-column="2" selection-end-line="81" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#139#150#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
