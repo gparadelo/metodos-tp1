@@ -12,17 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e07d88b-be03-4bc0-89f6-c9b438a02a03" name="Default" comment="funcion DMatrix .cpp">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/experimentacion/resultados/test_15_segundos.txt.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/experimentacion/resultados/test_30_segundos.txt.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/experimentacion/resultados/test_aleatorio.txt.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/experimentacion/resultados/test_aleatorio_desordenado.txt.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/experimentacion/resultados/test_completo.txt.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/experimentacion/resultados/test_sin_links.txt.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/experimentacion/resultados/test_trivial.txt.out" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/main.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/pageRank" afterPath="$PROJECT_DIR$/cmake-build-debug/pageRank" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/main.cpp.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pageRank.dir/matrix.cpp.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/pageRank" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/experimentacion/Untitled.ipynb" afterPath="$PROJECT_DIR$/experimentacion/Untitled.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/experimentacion/results/results.out" afterPath="$PROJECT_DIR$/experimentacion/results/results.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/experimentacion/results/time" afterPath="$PROJECT_DIR$/experimentacion/results/time" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matrix.cpp" afterPath="$PROJECT_DIR$/matrix.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matrix.h" afterPath="$PROJECT_DIR$/matrix.h" />
@@ -44,12 +39,22 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="36" />
+            <state relative-caret-position="191">
+              <caret line="79" column="19" lean-forward="false" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#139#150#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="time" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/experimentacion/results/time">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,8 +69,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_completo.txt.time_results" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt.time_results">
+      <file leaf-file-name="matrix.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/matrix.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_aleatorio.txt.out" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio.txt.out">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_aleatorio_desordenado.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio_desordenado.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -74,18 +99,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="matrix.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/matrix.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5850">
-              <caret line="325" column="19" lean-forward="false" selection-start-line="325" selection-start-column="19" selection-end-line="325" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="100_0.061.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/experimentacion/inputs/100_0.061.txt">
+      <file leaf-file-name="test_aleatorio_desordenado.txt.out" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio_desordenado.txt.out">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -97,11 +112,31 @@
       <file leaf-file-name="matrix.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matrix.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="48" column="23" lean-forward="false" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+            <state relative-caret-position="299">
+              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding>
                 <element signature="e#92#110#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_15_segundos.txt.out" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_15_segundos.txt.out">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_completo.txt.out" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt.out">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,7 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cout</find>
       <find>logging</find>
       <find>loggi</find>
       <find>swap</find>
@@ -123,7 +157,6 @@
       <find>\s1</find>
       <find>multi</find>
       <find>buildId</find>
-      <find>scalar</find>
       <find>diagonal</find>
       <find>diagonalElement</find>
       <find>int</find>
@@ -137,6 +170,11 @@
       <find>sol</find>
       <find>logFu</find>
       <find>getTotal</find>
+      <find>multiplication</find>
+      <find>multipli</find>
+      <find>scalar</find>
+      <find>==</find>
+      <find>!=</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,9 +190,12 @@
         <option value="$PROJECT_DIR$/experimentacion/resultados/test_completo.txt" />
         <option value="$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt.our_results" />
         <option value="$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt.time_results" />
+        <option value="$PROJECT_DIR$/experimentacion/results/time_p_0.7" />
+        <option value="$PROJECT_DIR$/experimentacion/results/time_p_0.000000" />
+        <option value="$PROJECT_DIR$/experimentacion/results/time" />
+        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/matrix.h" />
         <option value="$PROJECT_DIR$/matrix.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -206,12 +247,23 @@
               <item name="pageRank" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="metodos-tp1" type="462c0819:PsiDirectoryNode" />
               <item name="experimentacion" type="462c0819:PsiDirectoryNode" />
-              <item name="inputs" type="462c0819:PsiDirectoryNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pageRank" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="metodos-tp1" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pageRank" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="metodos-tp1" type="462c0819:PsiDirectoryNode" />
+              <item name="tests_docentes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pageRank" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="metodos-tp1" type="462c0819:PsiDirectoryNode" />
+              <item name="tests_docentes" type="462c0819:PsiDirectoryNode" />
+              <item name="tests_tp1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -236,7 +288,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.inputs">
+  <component name="RunManager" selected="Application.pageRank-doc-aleatorio">
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
     </configuration>
@@ -244,6 +296,9 @@
       <envs />
     </configuration>
     <configuration name="pageRank-Docentes" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../tests_docentes/tests_tp1/test_15_segundos.txt 0.5" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank">
+      <envs />
+    </configuration>
+    <configuration name="pageRank-completo" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../tests_docentes/tests_tp1/test_completo.txt 0.5" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank">
       <envs />
     </configuration>
     <configuration name="pageRank-doc-15sec" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../tests_docentes/tests_tp1/test_15_segundos.txt 0.9" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank">
@@ -258,14 +313,15 @@
     <configuration name="pageRank" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../tests/input.txt 0.5" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pageRank" TARGET_NAME="pageRank" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pageRank" RUN_TARGET_NAME="pageRank">
       <envs />
     </configuration>
-    <list size="7">
+    <list size="8">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
       <item index="1" class="java.lang.String" itemvalue="Application.pageRank" />
       <item index="2" class="java.lang.String" itemvalue="Application.pageRank-Docentes" />
       <item index="3" class="java.lang.String" itemvalue="Application.inputs" />
       <item index="4" class="java.lang.String" itemvalue="Application.pageRank-doc-15sec" />
-      <item index="5" class="java.lang.String" itemvalue="Application.pageRank-doc-aleato_desor" />
-      <item index="6" class="java.lang.String" itemvalue="Application.pageRank-doc-aleatorio" />
+      <item index="5" class="java.lang.String" itemvalue="Application.pageRank-completo" />
+      <item index="6" class="java.lang.String" itemvalue="Application.pageRank-doc-aleato_desor" />
+      <item index="7" class="java.lang.String" itemvalue="Application.pageRank-doc-aleatorio" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -294,7 +350,7 @@
       <workItem from="1523377804741" duration="14000" />
       <workItem from="1523377834086" duration="84000" />
       <workItem from="1523378046216" duration="20297000" />
-      <workItem from="1523459189592" duration="4649000" />
+      <workItem from="1523459189592" duration="14649000" />
     </task>
     <task id="LOCAL-00001" summary="funcion scalarMultiply">
       <created>1522771233910</created>
@@ -314,7 +370,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78330000" />
+    <option name="totallyTimeSpent" value="88330000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -329,7 +385,7 @@
     <frame x="1599" y="-11" width="1602" height="865" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.246875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -338,7 +394,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39946738" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39946738" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -426,42 +482,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matrix.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matrix.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="e#92#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#139#150#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/row.cpp" />
     <entry file="file://$PROJECT_DIR$/row.h" />
     <entry file="file:///usr/include/c++/5/bits/stl_pair.h" />
     <entry file="file:///usr/include/c++/5/bits/move.h" />
@@ -550,43 +570,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/experimentacion/resultados/test_15_segundos.txt" />
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio_desordenado.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/experimentacion/resultados/test_sin_links.txt" />
     <entry file="file://$PROJECT_DIR$/experimentacion/resultados/test_completo.txt" />
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio_desordenado.txt.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_15_segundos.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132948">
           <caret line="7386" column="2" lean-forward="false" selection-start-line="7385" selection-start-column="7" selection-end-line="7386" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_15_segundos.txt.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -607,14 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio.txt.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt.our_results">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -628,16 +609,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matrix.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="48" column="23" lean-forward="false" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
-          <folding>
-            <element signature="e#92#110#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -657,14 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/5/bits/stl_function.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="386" column="0" lean-forward="false" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/experimentacion/inputs/20_1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -678,17 +641,6 @@
         <state relative-caret-position="-432">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#139#150#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -716,18 +668,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/matrix.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5850">
-          <caret line="325" column="19" lean-forward="false" selection-start-line="325" selection-start-column="19" selection-end-line="325" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/experimentacion/inputs/100_0.061.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_completo.txt.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_15_segundos.txt.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experimentacion/results/time2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experimentacion/results/time_p_0.7">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="68" lean-forward="false" selection-start-line="0" selection-start-column="68" selection-end-line="0" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experimentacion/results/time_p_0.000000">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experimentacion/results/time_p_0.0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experimentacion/results/time">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="79" column="19" lean-forward="false" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#139#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio_desordenado.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio_desordenado.txt.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding>
+            <element signature="e#92#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/stl_function.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="386" column="0" lean-forward="false" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests_docentes/tests_tp1/test_aleatorio.txt.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matrix.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
           <folding />
         </state>
       </provider>

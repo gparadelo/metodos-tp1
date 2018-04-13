@@ -76,6 +76,8 @@ int main(int argc, char *argv[]) {
 //    Empezamos a medir el tiempo de Gauss
     timeType startGauss = high_resolution_clock::now();
     I.gaussianEliminate();
+
+    I.logFullRep();
 //    Paramos el reloj
     timeType endGauss= high_resolution_clock::now();
     duration<double> elapsedGauss = duration_cast<duration<double>>(endGauss - startGauss);
@@ -98,7 +100,7 @@ int main(int argc, char *argv[]) {
 
 
     timeFile << I.numberOfRows() << ';' << totalLinks << ';' << p << ';' << elapsedMultiply.count() << ';' <<elapsedAdd.count() << ';' << elapsedGauss.count() << ';' << elapsedResolve.count() << endl;
-//
+
 //
     cout << p << endl;
     cout <<  normalize(solution);
