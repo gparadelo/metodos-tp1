@@ -102,11 +102,11 @@ void Matrix::addMatrix(Matrix a) {
 //            O(log(elementos de la fila))
             if (fastRep[i].find(aIt->first) != fastRep[i].end()) {
                 it->second += aIt->second;
-                if(it->second == 0){
+                if(abs(0 - it->second) < 1e-12){
                     it = fastRep[i].erase(it);
                     continue;
                 }
-            } else if(aIt->second != 0) {
+            } else if(!abs(0 - aIt->second) < 1e-12) {
                 fastRep[i].insert(*(aIt));
             }
             aIt++;
@@ -141,7 +141,7 @@ void Matrix::multiplyMatrix(Matrix B) {
                     value += itA->second * valueB;
                     itA++;
                 }
-                if (value != 0) {
+                if (!abs(0 - value) < 1e-12) {
                 //Se ignoran las multiplicaciones que dan 0
                     pair<int, double> elem(j, value);
                     resultRow.insert(elem);
@@ -181,7 +181,7 @@ double Matrix::doVectorMultiplication(vector<double> *row, vector<double> *col) 
 }
 
 void Matrix::setElement(vector<map<int, double >> *matrix, int i, int j, double a) {
-    if (a == 0) return;
+    if (abs(0 - a) < 1e-12) return;
     while (matrix->size() < i + 1) {
         map<int, double> newMap;
         matrix->push_back(newMap);
@@ -198,12 +198,12 @@ void Matrix::gaussianEliminate() {
     for (int i = 0; i < fastRep.size(); ++i) {
 //        Para cada fila
         double a = diagonalElement(i);
-        if (a == 0) {
+        if (abs(0 - a) < 1e-12){
             pivotRows(i, rowWithTheHighestCoefficientInColumn(i));
 //            Acordarse de guardar este pivoteo
         }
         double b = diagonalElement(i);
-        if (b == 0) {
+        if (abs(0 - b) < 1e-12) {
             continue;
 //        No es li
         }
@@ -226,10 +226,10 @@ void Matrix::updateRowForGauss(int rowToUpdate, int mainRow) {
 
     while (it != fastRep[rowToUpdate].end()) {
         double mainRowElement = getElement(mainRow, it->first); //tomo el elemento de la fila que no modifico
-        it->second = it->second - (aToZeroOut / diagonal) * (mainRowElement);
+        it->second = it->second - ((aToZeroOut / diagonal) * (mainRowElement));
 
 
-        if (it->second == 0 || it->second == -0) {
+        if (abs(0 - it->second) < 1e-12) {
             it = fastRep[rowToUpdate].erase(it);
         } else {
             it++;
