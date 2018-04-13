@@ -232,7 +232,7 @@ void Matrix::updateRowForGauss(int rowToUpdate, int mainRow) {
 
     while (it != fastRep[rowToUpdate].end()) {
         double mainRowElement = getElement(mainRow, it->first); //tomo el elemento de la fila que no modifico
-        it->second = it->second - (aToZeroOut / diagonal) * (mainRowElement);
+        it->second = it->second - ((aToZeroOut / diagonal) * (mainRowElement));
 
 
         if (isEqualWithError(it->second , 0)) {
