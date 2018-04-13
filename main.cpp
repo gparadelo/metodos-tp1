@@ -81,7 +81,7 @@ int main(int argc, char *argv[]) {
 //    Paramos el reloj
     timeType endGauss= high_resolution_clock::now();
     duration<double> elapsedGauss = duration_cast<duration<double>>(endGauss - startGauss);
-//    I.logFullRep();
+//   I.logFullRep();
 
 
     vector<double> b(I.numberOfRows(),1);
