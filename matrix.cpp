@@ -4,7 +4,7 @@
 
 #include "matrix.h"
 
-double NUMERIC_ERROR = 1e-17;
+double NUMERIC_ERROR = 1e-6;
 
 bool isEqualWithError(double a, double b);
 
