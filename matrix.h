@@ -16,6 +16,7 @@
 #include <string>
 #include <cmath>
 
+
 using namespace std;
 
 
@@ -43,7 +44,7 @@ public:
     int getTotalLinks();
 
 
-    vector<double> resolveTheProlem (vector<double> sol);
+    vector<double> resolveTheProlem ();
     void buildDMatrix (Matrix);
     vector<double> vectorCj ();
 
