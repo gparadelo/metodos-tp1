@@ -89,7 +89,7 @@ int main(int argc, char *argv[]) {
 
 //    BACKWARDS SUBSTITUTION
     timeType startResolve = high_resolution_clock::now();
-    vector<double> solution = I.resolveTheProlem(b);
+    vector<double> solution = I.solve();
     timeType endResolve= high_resolution_clock::now();
     duration<double> elapsedResolve = duration_cast<duration<double>>(endResolve - startResolve);
 

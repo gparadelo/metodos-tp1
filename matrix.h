@@ -44,7 +44,7 @@ public:
     int getTotalLinks();
 
 
-    vector<double> resolveTheProlem ();
+    vector<double> solve();
     void buildDMatrix (Matrix);
     vector<double> vectorCj ();
 

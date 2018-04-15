@@ -301,7 +301,7 @@ void Matrix::scalarMultiply(double x) {
 
 }
 
-vector<double> Matrix::resolveTheProlem() {
+vector<double> Matrix::solve() {
     vector<double> res(solutionsVector.size(), 0);
 
     for (int i = fastRep.size() - 1; i >= 0; i--) {
