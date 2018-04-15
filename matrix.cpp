@@ -40,6 +40,7 @@ Matrix::Matrix(ifstream *input) {
         }
     }
 
+
     solutionsVector = vector<double>(totalPages, 1);
 
 
@@ -121,6 +122,7 @@ void Matrix::addMatrix(Matrix a) {
     }
 }
 
+//Modifica la matriz original
 void Matrix::multiplyMatrix(Matrix B) {
     assert(totalPages == B.totalPages);
 
@@ -299,7 +301,7 @@ void Matrix::scalarMultiply(double x) {
 
 }
 
-vector<double> Matrix::resolveTheProlem(vector<double> sol) {
+vector<double> Matrix::resolveTheProlem() {
     vector<double> res(solutionsVector.size(), 0);
 
     for (int i = fastRep.size() - 1; i >= 0; i--) {
