@@ -1,0 +1,7 @@
+El código fue hecho con clion así que están los archivos CMakeLists para poder trabajar con él.
+
+Sin embargo, agregamos un MakeFile para poder compilar también el programa.
+
+Dentro de la carpeta experimentación hay una jupyer notebook que diseña los casos de tests para los experimentos cuantitativos.
+
+Gonzalo Paradelo, Miguel Nehmad Alché, Facundo Blanco, Ciro Brignolo
